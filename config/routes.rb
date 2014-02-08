@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :volunteers, only: [:index]
 
   devise_for :users, path_names: {
     sign_up: 'register',

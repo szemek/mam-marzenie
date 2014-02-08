@@ -6,7 +6,7 @@ GIT
       sass (~> 3.2)
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actionmailer (4.1.0.beta1)
       actionpack (= 4.1.0.beta1)
