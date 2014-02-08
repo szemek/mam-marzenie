@@ -13,4 +13,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :fullname
     devise_parameter_sanitizer.for(:sign_up) << :region
   end
+
+  def after_sign_in_path_for(resources_or_scope)
+    dreams_path
+  end
+
 end
