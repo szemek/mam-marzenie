@@ -1,30 +1,15 @@
 Rails.application.routes.draw do
-  resources :dreams do
-    collection do
-      get :search
-    end
-  end
-
-  resources :sponsors do
-    collection do
-      get :search
-    end
-  end
-
   resources :members, only: [:create]
-
-  resources :volunteers do
-    collection do
-      get :search
-    end
-  end
+  resources :dreams
+  resources :sponsors
+  resources :volunteers
 
   devise_for :users, path_names: {
     sign_up: 'register',
     sign_in: 'login',
     sign_out: 'logout'
   }
-  root 'home#index'
+  root 'dreams#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
