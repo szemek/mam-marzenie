@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140208162526) do
+ActiveRecord::Schema.define(version: 20140208220032) do
 
   create_table "dreams", force: true do |t|
     t.string   "title"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140208162526) do
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar"
   end
 
   create_table "members", force: true do |t|
@@ -43,6 +44,20 @@ ActiveRecord::Schema.define(version: 20140208162526) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "tasks", force: true do |t|
+    t.integer  "dream_id"
+    t.integer  "sponsor_id"
+    t.integer  "user_id"
+    t.boolean  "result"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tasks", ["dream_id"], name: "index_tasks_on_dream_id"
+  add_index "tasks", ["sponsor_id"], name: "index_tasks_on_sponsor_id"
+  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
