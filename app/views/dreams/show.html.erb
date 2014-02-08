@@ -25,3 +25,11 @@
               data: { confirm: t('.confirm', default: t('helpers.links.confirm')) },
               class: 'btn btn-danger' %>
 </div>
+<% unless @dream.users.include?(current_user) %>
+  <div class="form-actions">
+    <%= form_for(Member.new) do |f|%>
+      <%= f.hidden_field :dream_id, value: @dream.id %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+<% end %>

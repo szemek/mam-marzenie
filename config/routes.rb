@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :members, only: [:create]
   resources :dreams
   resources :sponsors
   resources :volunteers
