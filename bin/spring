@@ -4,18 +4,15 @@
 # It gets overwritten when you run the `spring binstub` command
 
 unless defined?(Spring)
-  require 'rubygems'
-  require 'bundler'
+  require "rubygems"
+  require "bundler"
 
-  regexp = /^GEM$.*?^    spring \((.*?)\)$.*?^$/m
-  match = Bundler.default_lockfile.read.match(regexp)
-  if match
-    separator = File::PATH_SEPARATOR
-    ENV['GEM_PATH'] = ([Bundler.bundle_path.to_s] + Gem.path).join(separator)
-    ENV['GEM_HOME'] = ''
+  if match = Bundler.default_lockfile.read.match(/^GEM$.*?^    spring \((.*?)\)$.*?^$/m)
+    ENV["GEM_PATH"] = ([Bundler.bundle_path.to_s] + Gem.path).join(File::PATH_SEPARATOR)
+    ENV["GEM_HOME"] = ""
     Gem.paths = ENV
 
-    gem 'spring', match[1]
-    require 'spring/binstub'
+    gem "spring", match[1]
+    require "spring/binstub"
   end
 end
