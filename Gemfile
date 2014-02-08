@@ -18,7 +18,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 platform :ruby do
-  gem 'therubyracer' unless RUBY_PLATFORM.include?('x86_64-darwin')
+  gem 'therubyracer'
 end
 
 # Use jquery as the JavaScript library
@@ -51,6 +51,9 @@ gem 'spring',        group: :development
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'awesome_print'
 end
 
 group :test do
