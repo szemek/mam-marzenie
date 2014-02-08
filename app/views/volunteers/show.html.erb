@@ -17,4 +17,11 @@
     </strong>
     <%= l(@user.last_sign_in_at, format: :long) %>
   </div>
+  <div>
+    <ul>
+      <% @dreams.each do |dream| %>
+        <li><%= link_to dream.title, dream_path %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
