@@ -14,9 +14,14 @@
         [t(:failed), :failed]
       ], selected: '')
     %>
-    <%= f.text_field :category_cont,
-      class: 'form-control',
-      placeholder: :category
+    <%= f.select :category_cont, options_for_select([
+        ['Kategoria', ''],
+        [t(:be), :be],
+        [t(:have), :have],
+        [t(:travel), :travel],
+        [t(:meet), :meet],
+        [t(:other), :other]
+      ], selected: '')
     %>
     <%= f.text_field :region_cont,
       class: 'form-control',
