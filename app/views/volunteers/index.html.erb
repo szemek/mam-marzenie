@@ -1,14 +1,25 @@
-<h1><%= t :volunteers %></h1>
+<% model_class = User %>
+
+<h1><%= t :volunteers, scope: [:layouts] %></h1>
 <div class="row">
   <div class="col-lg-6">
     <%= render partial: 'search', locals: { search: @search } %>
   </div>
 </div>
 
-<ul>
-<% @users.each do |user| %>
-  <li>
-    <%= link_to user.fullname, volunteer_path(user) %>
-  </li>
-<% end %>
-</ul>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:fullname) %></th>
+      <th><%= model_class.human_attribute_name(:region) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.fullname, volunteer_path(user) %></td>
+        <td><%= user.region %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -2,3 +2,6 @@ en:
   volunteers:
     show:
       last_activity_at: Last activity at
+    search:
+      fullname: Fullname
+      region: Region
