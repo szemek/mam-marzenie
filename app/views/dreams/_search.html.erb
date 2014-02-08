@@ -27,6 +27,9 @@
       class: 'form-control',
       placeholder: :region
     %>
+    <%= f.date_field :updated_at,
+      class: 'form-control'
+    %>
     <span class='input-group-btn'>
       <%= f.submit t('search'), class: 'btn btn-default' %>
     </span>
