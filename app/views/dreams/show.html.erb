@@ -1,17 +1,11 @@
 <%- model_class = Dream -%>
 <div class='page-header'>
-  <h1><%=t '.title', default: model_class.model_name.human.titleize %></h1>
+  <h1>
+    <%= @dream.title %>
+    <small><%= @dream.child_fullname %> <%= @dream.child_age %></small></h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @dream.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @dream.description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:child_fullname) %>:</strong></dt>
-  <dd><%= @dream.child_fullname %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:child_age) %>:</strong></dt>
-  <dd><%= @dream.child_age %></dd>
   <dt><strong><%= model_class.human_attribute_name(:region) %>:</strong></dt>
   <dd><%= @dream.region %></dd>
   <dt><strong><%= model_class.human_attribute_name(:category) %>:</strong></dt>
