@@ -1,0 +1,18 @@
+<%= search_form_for search,
+  url: volunteers_path,
+  html: { class: 'form' } do |f|
+%>
+  <div class='input-group'>
+    <%= f.text_field :fullname_cont,
+      class: 'form-control',
+      placeholder: 'fullname'
+    %>
+    <span class='input-group-btn'>
+      <%= f.submit t('search'), class: 'btn btn-default' %>
+    </span>
+    <%= f.text_field :region_cont,
+      class: 'form-control',
+      placeholder: 'region'
+    %>
+  </div>
+<% end %>
