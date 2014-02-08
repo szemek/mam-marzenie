@@ -69,6 +69,7 @@ group :development do
   gem 'guard-cucumber'
   gem 'guard-livereload', require: false
   gem 'letter_opener'
+  gem 'factory_girl_rails', require: true
 end
 
 gem 'devise'
