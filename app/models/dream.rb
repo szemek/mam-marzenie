@@ -6,6 +6,8 @@ class Dream < ActiveRecord::Base
   validates :child_age, inclusion: { in: proc { |obj| obj.age_range } }
   validates :status, inclusion: { in: proc { statuses } }
 
+  mount_uploader :avatar, AvatarUploader
+
   def age_range
     3..18
   end
