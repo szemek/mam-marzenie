@@ -12,7 +12,7 @@ Feature: User authentication
     And I fill in 'user_password' with "<password>"
     And I fill in 'user_password_confirmation' with "<password>"
     And I press "Sign up"
-    Then I should see "<fullname> (<email>), <region>"
+    Then I should see "<fullname>"
 
     Examples:
       | email           | fullname | password | region |
