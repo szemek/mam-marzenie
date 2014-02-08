@@ -13,15 +13,7 @@
     <div class='collapse navbar-collapse'>
       <% if user_signed_in? %>
         <ul class='nav navbar-nav'>
-          <li class='active'>
-            <%= link_to t('dreams'), dreams_path %>
-          </li>
-          <li>
-            <%= link_to t('sponsors'), sponsors_path  %>
-          </li>
-          <li>
-            <%= link_to t('volunteers'), volunteers_path %>
-          </li>
+          <%= tabs(:dreams, :sponsors, :volunteers) %>
         </ul>
         <ul class='nav navbar-nav navbar-right'>
           <li>
