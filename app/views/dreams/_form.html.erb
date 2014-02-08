@@ -1,6 +1,6 @@
 <div class='row'>
   <div class='col-md-4'>
-    <%= form_for @dream,
+    <%= form_for dream,
       html: { class: 'form' } do |f|
     %>
       <div class='form-group'>
@@ -23,7 +23,14 @@
       </div>
       <div class='form-group'>
         <%= f.label :child_age %>
-        <%= f.text_field :child_age, class: 'form-control' %>
+        <%= f.number_field :child_age,
+          class: 'form-control',
+          in: dream.age_range
+        %>
+      </div>
+      <div class='form-group'>
+        <%= f.label :avatar %>
+        <%= f.file_field :avatar, class: 'form-control' %>
       </div>
       <div class='form-group'>
         <%= f.label :region %>
@@ -38,11 +45,9 @@
       </div>
       <div class='form-group'>
         <%= f.label :status %>
-        <%= f.select :status, [
-          [t(:in_progress), :in_progress],
-          [t(:complete), :complete],
-          [t(:failed), :failed]
-        ] %>
+        <%= f.select :status, dream_statuses, {},
+          class: 'form-control'
+        %>
       </div>
 
       <div>

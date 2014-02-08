@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140208210104) do
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar"
   end
 
   create_table "members", force: true do |t|
