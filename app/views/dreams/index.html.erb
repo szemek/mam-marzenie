@@ -2,7 +2,18 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <%= text_field_tag :search, params[:search], class: 'form-control'%>
+      <!-- <input type="text" class="form-control"> -->
+      <span class="input-group-btn">
+        <!-- <button class="btn btn-default" type="button">Go!</button> -->
+        <%= button_to 'Go!',class: 'btn btn-default', :method =>'get'%>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div>
 <table class="table table-striped">
   <thead>
     <tr>
