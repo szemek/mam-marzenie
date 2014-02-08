@@ -1,7 +1,9 @@
 en:
   layouts:
+    dreams: Dreams
+    sponsors: Sponsors
+    volunteers: Volunteers
     application:
-      dreams: Dreams
       edit_profile: Edit profile
       logged_in: Logged in as
       login: Login
