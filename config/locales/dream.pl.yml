@@ -1,0 +1,15 @@
+pl:
+  activerecord:
+    models:
+      dream:
+        one: Marzenie
+        other: Marzenia
+    attributes:
+      dream:
+        title: Tytuł
+        description: Opis
+        child_fullname: Imię i nazwisko dziecka
+        child_age: Wiek dziecka
+        region: Region
+        category: Kategoria
+        status: Status

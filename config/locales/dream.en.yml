@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    models:
+      dream:
+        one: Dream
+        other: Dreams
+    attributes:
+      dream:
+        title: Title
+        description: Description
+        child_fullname: Child fulname
+        child_age: Child age
+        region: Region
+        category: Category
+        status: Status
