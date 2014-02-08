@@ -8,7 +8,7 @@ en:
       dream:
         title: Title
         description: Description
-        child_fullname: Child fulname
+        child_fullname: Dreamer
         child_age: Child age
         region: Region
         category: Category

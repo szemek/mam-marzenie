@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :members, only: [:create]
+
   resources :volunteers do
     collection do
       get :search
