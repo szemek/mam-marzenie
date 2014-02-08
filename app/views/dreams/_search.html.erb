@@ -1,29 +1,41 @@
 <%= search_form_for search,
   url: dreams_path,
-  html: { class: 'form' } do |f|
+  role: 'form',
+  html: { class: 'form-inline' } do |f|
 %>
-  <div class='input-group'>
+  <div class='form-group'>
+    <%= f.label :title_cont, class: 'sr-only' %>
     <%= f.text_field :title_cont,
       class: 'form-control',
       placeholder: :title
     %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :category_cont, class: 'sr-only' %>
+    <%= f.text_field :category_cont,
+      class: 'form-control',
+      placeholder: :category
+    %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :region_cont, class: 'sr-only' %>
+    <%= f.text_field :region_cont,
+      class: 'form-control',
+      placeholder: :region
+    %>
+  </div>
+
+  <div class='form-group'>
     <%= f.select :status_cont, options_for_select([
         ['Stan', ''],
         [t(:complete), :complete],
         [t(:in_progress), :in_progress],
         [t(:failed), :failed]
-      ], selected: '')
+      ], selected: ''), {},
+      class: 'form-control'
     %>
-    <%= f.text_field :category_cont,
-      class: 'form-control',
-      placeholder: :category
-    %>
-    <%= f.text_field :region_cont,
-      class: 'form-control',
-      placeholder: :region
-    %>
-    <span class='input-group-btn'>
-      <%= f.submit t('search'), class: 'btn btn-default' %>
-    </span>
   </div>
+   <%= f.submit t('search'), class: 'btn btn-default' %>
 <% end %>
