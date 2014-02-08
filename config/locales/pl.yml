@@ -1,4 +1,12 @@
 pl:
+  dreams: Marzenia
+  logged_in: Zalogowany jako
+  logout: Wyloguj
+  sign_in: Zaloguj
+  sign_up: Zarejestruj
+  sponsors: Sponsorzy
+  volunteers: Wolontariusze
+
   date:
     abbr_day_names:
     - nie
