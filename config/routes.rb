@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :dreams
+  resources :dreams do
+    collection do
+      get :search
+    end
+  end
+
 
   devise_for :users, path_names: {
     sign_up: 'register',
