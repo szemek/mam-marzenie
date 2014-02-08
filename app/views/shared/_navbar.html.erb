@@ -25,9 +25,7 @@
         </ul>
         <ul class='nav navbar-nav navbar-right'>
           <li>
-            <a href='#'>
-              <%= t('logged_in') %> <strong><%= current_user.fullname %></strong>
-            </a>
+            <%= link_to t('profile'), edit_user_registration_path %>
           </li>
           <li>
             <%= link_to t('logout'), destroy_user_session_path, method: :delete
