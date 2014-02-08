@@ -50,7 +50,7 @@
           <div class="container nav-collapse">
             <% if user_signed_in? %>
               <ul class="nav">
-                <li><%= link_to "Marzenia", "/path1"  %></li>
+                <li><%= link_to t('.dreams'), dreams_path %></li>
                 <li><%= link_to "Sponsorzy", "/path2"  %></li>
                 <li><%= link_to "Wolontariusze", "/path3"  %></li>
                 <li><%= link_to t('.logout'), destroy_user_session_path, method: :delete %></li>

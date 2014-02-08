@@ -1,6 +1,7 @@
 en:
   layouts:
     application:
+      dreams: Dreams
       edit_profile: Edit profile
       logged_in: Logged in as
       login: Login

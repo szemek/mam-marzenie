@@ -1,6 +1,7 @@
 pl:
   layouts:
     application:
+      dreams: Marzenia
       edit_profile: Edycja profilu
       logged_in: Zalogowany jako
       login: Zaloguj
