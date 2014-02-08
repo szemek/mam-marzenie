@@ -1,19 +1,14 @@
-<h1><%= :volunteers %></h1>
+<h1><%= t :volunteers %></h1>
 <div class="row">
   <div class="col-lg-6">
-    <%= form_tag(search_volunteers_path, method: :get) do %>
-      <div class="input-group">
-        <span class="input-group-btn">
-          <%= text_field_tag :fullname, nil, class: 'form-control'%>
-          <%= submit_tag t('search'), class: 'btn btn-default' %>
-        </span>
-      </div>
-    <% end %>
+    <%= render partial: 'search', locals: { search: @search } %>
   </div>
 </div>
 
 <ul>
 <% @users.each do |user| %>
-  <li><%= link_to user.fullname, volunteer_path(user) %></li>
+  <li>
+    <%= link_to user.fullname, volunteer_path(user) %>
+  </li>
 <% end %>
 </ul>
