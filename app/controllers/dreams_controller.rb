@@ -21,6 +21,11 @@ class DreamsController < ApplicationController
   def edit
   end
 
+  def search
+    @dreams = Dream.where('title LIKE ?', "%#{params[:title]}%")
+    render :index
+  end
+
   # POST /dreams
   # POST /dreams.json
   def create
