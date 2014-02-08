@@ -1,12 +1,20 @@
+<div class='page-header'>
+  <h3><%= @user.fullname %></h3>
+</div>
+
 <div class='volunteer'>
-  <span class='fullname'><%= @user.fullname %></span>,
-  <span class='region'><%= @user.region %></span>
-  <br />
-  <span class='email'>
-    <a href="mailto:<%= @user.email %>"><%= @user.email %></a>
-  </span>
-  <br />
-  <span class='last-login'>
+  <div class='region'>
+    <%= @user.region %>
+  </div>
+  <div class='email'>
+    <a href="mailto:<%= @user.email %>">
+      <%= @user.email %>
+    </a>
+  </div>
+  <div class='last-login'>
+    <strong>
+      <%= t('.last_activity_at') %>:
+    </strong>
     <%= l(@user.last_sign_in_at, format: :long) %>
-  </span>
+  </div>
 </div>
