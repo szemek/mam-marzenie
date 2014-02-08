@@ -11,18 +11,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :volunteers do
-    collection do
-      get :search
-    end
-  end
+  resources :volunteers
 
   devise_for :users, path_names: {
     sign_up: 'register',
     sign_in: 'login',
     sign_out: 'logout'
   }
-  root 'home#index'
+  root 'dreams#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
