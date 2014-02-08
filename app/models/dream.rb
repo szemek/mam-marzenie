@@ -11,6 +11,6 @@ class Dream < ActiveRecord::Base
   end
 
   def self.statuses
-    [:ongoing, :completed, :failed]
+    ['ongoing', 'completed', 'failed']
   end
 end
