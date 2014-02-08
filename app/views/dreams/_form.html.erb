@@ -33,8 +33,14 @@
         %>
       </div>
       <div class='form-group'>
-        <%= f.label :category%>
-        <%= f.text_field :category, class: 'form-control' %>
+        <%= f.label :category %>
+        <%= f.select :category, [
+          [t(:have), :have],
+          [t(:meet), :meet],
+          [t(:travel), :travel],
+          [t(:be), :be],
+          [t(:other), :other]
+        ] %>
       </div>
       <div class='form-group'>
         <%= f.label :status %>
