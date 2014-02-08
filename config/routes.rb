@@ -1,16 +1,6 @@
 Rails.application.routes.draw do
-  resources :dreams do
-    collection do
-      get :search
-    end
-  end
-
-  resources :sponsors do
-    collection do
-      get :search
-    end
-  end
-
+  resources :dreams
+  resources :sponsors
   resources :volunteers
 
   devise_for :users, path_names: {
