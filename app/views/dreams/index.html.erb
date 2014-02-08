@@ -4,14 +4,7 @@
 </div>
 <div class="row">
   <div class="col-lg-6">
-    <%= form_tag(search_dreams_path, method: :get) do %>
-      <div class="input-group">
-        <span class="input-group-btn">
-          <%= text_field_tag :title, nil, class: 'form-control'%>
-          <%= submit_tag t('search'), class: 'btn btn-default' %>
-        </span>
-      </div>
-    <% end %>
+      <%= render partial: 'search', locals: { search: @search } %>
   </div>
 </div>
 <table class="table table-striped">
@@ -29,7 +22,7 @@
         <td><%= link_to dream.title, dream %></td>
         <td><%= dream.child_fullname %></td>
         <td><%= dream.child_age %></td>
-        <td><%= Dream.human_attribute_name('status') %></td>
+        <td><%= t(dream.status) %></td>
       </tr>
     <% end %>
   </tbody>
