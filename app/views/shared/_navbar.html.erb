@@ -14,10 +14,10 @@
       <% if user_signed_in? %>
         <ul class='nav navbar-nav'>
           <li class='active'>
-            <%= link_to t('.dreams'), dreams_path %>
+            <%= link_to t('dreams'), dreams_path %>
           </li>
           <li>
-            <%= link_to t('.sponsors'), sponsors_path  %>
+            <%= link_to t('sponsors'), sponsors_path  %>
           </li>
           <li>
             <%= link_to t('volunteers'), volunteers_path %>
@@ -26,20 +26,20 @@
         <ul class='nav navbar-nav navbar-right'>
           <li>
             <a href='#'>
-              <%= t('.logged_in') %> <strong><%= current_user.fullname %></strong>
+              <%= t('logged_in') %> <strong><%= current_user.fullname %></strong>
             </a>
           </li>
           <li>
-            <%= link_to t('.logout'), destroy_user_session_path, method: :delete
+            <%= link_to t('logout'), destroy_user_session_path, method: :delete
             %>
           </li>
         </ul>
       <% else %>
         <ul class='nav navbar-nav navbar-right'>
           <li>
-            <%= link_to t('.sign_up'), new_user_registration_path %>
+            <%= link_to t('sign_up'), new_user_registration_path %>
           </li>
-          <li><%= link_to t('.sign_in'), new_user_session_path %>
+          <li><%= link_to t('sign_in'), new_user_session_path %>
           </li>
         </ul>
       <% end %>
