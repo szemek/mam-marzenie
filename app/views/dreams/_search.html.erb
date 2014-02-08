@@ -12,18 +12,24 @@
   </div>
 
   <div class='form-group'>
-    <%= f.label :category_cont, class: 'sr-only' %>
-    <%= f.text_field :category_cont,
-      class: 'form-control',
-      placeholder: :category
-    %>
-  </div>
-
-  <div class='form-group'>
     <%= f.label :region_cont, class: 'sr-only' %>
     <%= f.text_field :region_cont,
       class: 'form-control',
       placeholder: :region
+    %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :category_cont, class: 'sr-only' %>
+    <%= f.select :category_cont, options_for_select([
+        ['Kategoria', ''],
+        [t(:be), :be],
+        [t(:have), :have],
+        [t(:travel), :travel],
+        [t(:meet), :meet],
+        [t(:other), :other]
+      ], selected: ''), {},
+      class: 'form-control'
     %>
   </div>
 
