@@ -1,20 +1,19 @@
 # Application helper
 module ApplicationHelper
   def tabs(*names)
-    elements = []
-
-    names.each do |name|
-      if current_page?(:controller => name)
-        elements << content_tag(:li, class: 'active') do
-          link_to t(name, scope: :layouts), url_for(:controller => name)
-        end
-      else
-        elements << content_tag(:li) do
-          link_to t(name, scope: :layouts), url_for(:controller => name)
-        end
-      end
+    elements = names.map do |n|
+      current_page?(controller: n) && element(n, 'active') || element(n)
     end
-
     raw elements.join
   end
+
+  private
+
+  def element(name, state = '')
+    content_tag(:li, class: state) do
+      link_to t(name, scope: :layouts), url_for(controller: name)
+    end
+  end
 end
+
+
