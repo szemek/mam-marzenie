@@ -14,6 +14,10 @@
         [t(:failed), :failed]
       ], selected: '')
     %>
+    <%= f.text_field :category_cont,
+      class: 'form-control',
+      placeholder: :category
+    %>
     <span class='input-group-btn'>
       <%= f.submit t('search'), class: 'btn btn-default' %>
     </span>
