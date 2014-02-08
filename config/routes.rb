@@ -5,8 +5,17 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :volunteers, only: [:index]
-  resources :sponsors
+  resources :sponsors do
+    collection do
+      get :search
+    end
+  end
+
+  resources :volunteers, only: [:index] do
+    collection do
+      get :search
+    end
+  end
 
   devise_for :users, path_names: {
     sign_up: 'register',
