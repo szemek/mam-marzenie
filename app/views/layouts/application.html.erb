@@ -38,41 +38,12 @@
   </head>
   <body>
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">MamMarzenie</a>
-          <div class="container nav-collapse">
-            <% if user_signed_in? %>
-              <ul class="nav">
-                <li><%= link_to t('.dreams'), dreams_path %></li>
-                <li><%= link_to "Sponsorzy", "/path2"  %></li>
-                <li><%= link_to "Wolontariusze", "/path3"  %></li>
-                <li><%= link_to t('.logout'), destroy_user_session_path, method: :delete %></li>
-              </ul>
-              <div class='nav'>
-                <p class="navbar-text navbar-right"><%= t('.logged_in') %>: <a href="#" class="navbar-link"><strong><%= current_user.fullname %></strong></a></p>
-              </div>
-            <% else %>
-              <ul class="nav">
-                <li><%= link_to t('.sign_up'), new_user_registration_path %></li>
-                <li><%= link_to t('.sign_in'), new_user_session_path %></li>
-              </ul>
-            <% end %>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+  <%= render 'shared/navbar' %>
 
     <div class="container">
         <div class="row">
           <div class="span12">
-            <%= bootstrap_flash %>
+            <!-- bootstrap_flash -->
             <%= yield %>
           </div>
         </div><!--/row-->
