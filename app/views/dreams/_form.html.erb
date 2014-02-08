@@ -41,11 +41,7 @@
       </div>
       <div class='form-group'>
         <%= f.label :status %>
-        <%= f.select :status, [
-          [t(:in_progress), :in_progress],
-          [t(:complete), :complete],
-          [t(:failed), :failed]
-        ] %>
+        <%= f.select :status, dream_statuses %>
       </div>
 
       <div>
