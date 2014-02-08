@@ -1,5 +1,8 @@
 pl:
   layouts:
+    sponsors: Sponsorzy
+    volunteers: Wolontariusze
+    dreams: Marzenia
     application:
       dreams: Marzenia
       edit_profile: Edycja profilu
