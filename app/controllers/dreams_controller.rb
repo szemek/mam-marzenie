@@ -4,7 +4,8 @@ class DreamsController < ApplicationController
   # GET /dreams
   # GET /dreams.json
   def index
-    @dreams = Dream.all
+    @search = Dream.search(params[:q])
+    @dreams = @search.result
   end
 
   # GET /dreams/1
