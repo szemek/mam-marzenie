@@ -8,8 +8,8 @@ pl:
       dream:
         title: Tytuł
         description: Opis
-        child_fullname: Imię i nazwisko dziecka
+        child_fullname: Marzyciel
         child_age: Wiek dziecka
-        region: Region
+        region: Obszar
         category: Kategoria
         status: Status
