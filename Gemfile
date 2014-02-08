@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -69,6 +69,7 @@ group :development do
   gem 'guard-cucumber'
   gem 'guard-livereload', require: false
   gem 'letter_opener'
+  gem 'factory_girl_rails', require: true
 end
 
 gem 'devise'

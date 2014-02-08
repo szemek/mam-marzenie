@@ -6,6 +6,7 @@ pl:
   sign_up: Zarejestruj
   sponsors: Sponsorzy
   volunteers: Wolontariusze
+  search: Szukaj
 
   date:
     abbr_day_names:
@@ -163,6 +164,9 @@ pl:
       create: Utwórz %{model}
       submit: Zapisz %{model}
       update: Aktualizuj %{model}
+    links:
+      destroy: Usuń
+      confirm: Czy chcesz usunąć?
   number:
     currency:
       format:
