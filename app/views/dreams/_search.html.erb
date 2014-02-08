@@ -1,0 +1,21 @@
+<%= search_form_for search,
+  url: dreams_path,
+  html: { class: 'form' } do |f|
+%>
+  <div class='input-group'>
+    <%= f.text_field :title_cont,
+      class: 'form-control',
+      placeholder: :title
+    %>
+    <%= f.select :status_cont, options_for_select([
+        ['Stan', ''],
+        [t(:complete), :complete],
+        [t(:in_progress), :in_progress],
+        [t(:failed), :failed]
+      ], selected: '')
+    %>
+    <span class='input-group-btn'>
+      <%= f.submit t('search'), class: 'btn btn-default' %>
+    </span>
+  </div>
+<% end %>
