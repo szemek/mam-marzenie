@@ -51,6 +51,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'awesome_print'
+  gem 'pry-rails'
 end
 
 group :test do
@@ -72,6 +73,4 @@ end
 
 gem 'devise'
 gem 'devise-i18n-views'
-
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
