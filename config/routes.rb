@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
-  resources :dreams
+  resources :dreams do
+    collection do
+      get :search
+    end
+  end
+
+  resources :volunteers, only: [:index]
+  resources :sponsors
 
   devise_for :users, path_names: {
     sign_up: 'register',
     sign_in: 'login',
-    sign_out: 'logout',
+    sign_out: 'logout'
   }
   root 'home#index'
 
