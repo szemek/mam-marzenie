@@ -12,6 +12,9 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :fullname
     devise_parameter_sanitizer.for(:sign_up) << :region
+
+    devise_parameter_sanitizer.for(:account_update) << :fullname
+    devise_parameter_sanitizer.for(:account_update) << :region
   end
 
   def after_sign_in_path_for(resources_or_scope)

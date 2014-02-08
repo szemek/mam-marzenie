@@ -61,6 +61,11 @@ class SponsorsController < ApplicationController
     end
   end
 
+  def search
+    @sponsors = Sponsor.where('fullname LIKE ?', "%#{params[:fullname]}%")
+    render :index
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_sponsor
