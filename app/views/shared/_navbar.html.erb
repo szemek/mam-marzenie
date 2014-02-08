@@ -1,26 +1,47 @@
-<header class="navbar navbar-default" role="navigation">
-  <div class="container">
-      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="navbar-brand" href="#">MamMarzenie</a>
-      <div class="container navbar-collapse">
-        <% if user_signed_in? %>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to t('.dreams'), dreams_path %></li>
-            <li><%= link_to "Sponsorzy", "/path2"  %></li>
-            <li><%= link_to "Wolontariusze", "/path3"  %></li>
-            <li><a href="#"><%= t('.logged_in') %> <strong><%= current_user.fullname %></strong></a></li>
-            <li><%= link_to t('.logout'), destroy_user_session_path, method: :delete %></li>
-          </ul>
-        <% else %>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to t('.sign_up'), new_user_registration_path %></li>
-            <li><%= link_to t('.sign_in'), new_user_session_path %></li>
-          </ul>
-        <% end %>
-      </div><!--/.nav-collapse -->
-  </div>
-</header>
+<nav class='navbar navbar-default' role='navigation'>
+  <div class='container'>
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1'>
+        <span class='sr-only'>Nawigacja</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class='navbar-brand' href='#'>MamMarzenie</a>
+    </div>
+
+    <div class='collapse navbar-collapse'>
+      <% if user_signed_in? %>
+        <ul class='nav navbar-nav'>
+          <li class='active'>
+            <%= link_to t('.dreams'), dreams_path %>
+          </li>
+          <li>
+            <%= link_to 'Sponsorzy', '/path2' %></li>
+          <li>
+            <%= link_to 'Wolontariusze', '/path3'  %>
+          </li>
+        </ul>
+        <ul class='nav navbar-nav navbar-right'>
+          <li>
+            <a href='#'>
+              <%= t('.logged_in') %> <strong><%= current_user.fullname %></strong>
+            </a>
+          </li>
+          <li>
+            <%= link_to t('.logout'), destroy_user_session_path, method: :delete
+            %>
+          </li>
+        </ul>
+      <% else %>
+        <ul class='nav navbar-nav navbar-right'>
+          <li>
+            <%= link_to t('.sign_up'), new_user_registration_path %>
+          </li>
+          <li><%= link_to t('.sign_in'), new_user_session_path %>
+          </li>
+        </ul>
+      <% end %>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
