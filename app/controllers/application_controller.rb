@@ -16,9 +16,4 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :fullname
     devise_parameter_sanitizer.for(:account_update) << :region
   end
-
-  def after_sign_in_path_for(resources_or_scope)
-    dreams_path
-  end
-
 end
