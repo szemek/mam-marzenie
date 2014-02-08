@@ -164,6 +164,9 @@ pl:
       create: Utwórz %{model}
       submit: Zapisz %{model}
       update: Aktualizuj %{model}
+    links:
+      destroy: Usuń
+      confirm: Czy chcesz usunąć?
   number:
     currency:
       format:
