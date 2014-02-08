@@ -1,0 +1,8 @@
+en:
+  layouts:
+    application:
+      edit_profile: Edit profile
+      logged_in: Logged in as
+      login: Login
+      logout: Logout
+      sign_up: Sign up

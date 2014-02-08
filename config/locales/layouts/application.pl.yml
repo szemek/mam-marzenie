@@ -1,0 +1,8 @@
+pl:
+  layouts:
+    application:
+      edit_profile: Edycja profilu
+      logged_in: Zalogowany jako
+      login: Zaloguj
+      logout: Wyloguj
+      sign_up: Zarejestruj

@@ -1,0 +1,23 @@
+AllCops:
+  Excludes:
+    - db/**
+    - bin/**
+    - features/support/**
+LineLength:
+  Enabled: true
+  Max: 79
+
+ClassLength:
+  CountComments: false  # count full line comments?
+  Max: 100
+
+LineLength:
+  Max: 79
+
+MethodLength:
+  CountComments: false  # count full line comments?
+  Max: 5
+
+ParameterLists:
+  Max: 4
+  CountKeywordArgs: true

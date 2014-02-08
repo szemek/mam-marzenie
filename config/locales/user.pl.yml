@@ -1,0 +1,9 @@
+pl:
+  activerecord:
+    models:
+      user: Wolontariusz
+    attributes:
+      user:
+        email: Email
+        password: Hasło
+        password_confirmation: Potwierdzenie hasła
