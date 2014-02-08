@@ -13,3 +13,7 @@ en:
         region: Region
         category: Category
         status: Status
+  dreams:
+    search:
+      title: Tytuł
+      region: Obszar
