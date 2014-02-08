@@ -4,7 +4,8 @@ class SponsorsController < ApplicationController
   # GET /sponsors
   # GET /sponsors.json
   def index
-    @sponsors = Sponsor.all
+    @search = Sponsor.search(params[:q])
+    @sponsors = @search.result
   end
 
   # GET /sponsors/1
@@ -59,11 +60,6 @@ class SponsorsController < ApplicationController
       format.html { redirect_to sponsors_url }
       format.json { head :no_content }
     end
-  end
-
-  def search
-    @sponsors = Sponsor.where('fullname LIKE ?', "%#{params[:fullname]}%")
-    render :index
   end
 
   private
