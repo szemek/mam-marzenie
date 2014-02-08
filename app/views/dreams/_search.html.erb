@@ -34,14 +34,11 @@
   </div>
 
   <div class='form-group'>
-    <%= f.select :status_cont, options_for_select([
-        ['Stan', ''],
-        [t(:complete), :complete],
-        [t(:in_progress), :in_progress],
-        [t(:failed), :failed]
-      ], selected: ''), {},
-      class: 'form-control'
-    %>
+    <%= f.select :status_cont, options_for_select(
+        [['Stan', '']] + dream_statuses,
+        selected: ''), {},
+        class: 'form-control'
+        %>
   </div>
    <%= f.submit t('search'), class: 'btn btn-default' %>
 <% end %>

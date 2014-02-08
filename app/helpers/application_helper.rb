@@ -29,6 +29,10 @@ module ApplicationHelper
     raw elements.join
   end
 
+  def dream_statuses
+    Dream.statuses.map{|status| [t(status), status]}
+  end
+
   private
 
   def element(name, options = {})
