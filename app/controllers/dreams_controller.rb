@@ -1,3 +1,4 @@
+#
 class DreamsController < ApplicationController
   before_action :set_dream, only: [:show, :edit, :update, :destroy]
 
