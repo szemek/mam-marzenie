@@ -81,6 +81,7 @@ class DreamsController < ApplicationController
         :description,
         :child_fullname,
         :child_age,
+        :avatar,
         :region,
         :category,
         :status
