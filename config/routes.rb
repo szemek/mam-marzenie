@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :volunteers, only: [:index]
+  resources :volunteers, only: [:index, :show]
   resources :sponsors
 
   devise_for :users, path_names: {

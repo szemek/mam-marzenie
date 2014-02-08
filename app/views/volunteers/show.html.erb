@@ -1,0 +1,12 @@
+<div class='volunteer'>
+  <span class='fullname'><%= @user.fullname %></span>,
+  <span class='region'><%= @user.region %></span>
+  <br />
+  <span class='email'>
+    <a href="mailto:<%= @user.email %>"><%= @user.email %></a>
+  </span>
+  <br />
+  <span class='last-login'>
+    <%= l(@user.last_sign_in_at, format: :long) %>
+  </span>
+</div>
