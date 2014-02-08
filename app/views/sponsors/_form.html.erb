@@ -1,32 +1,34 @@
-<%= form_for @sponsor, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :fullname, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :fullname, :class => 'text_field', required: true %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :description, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :description, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :email, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.email_field :email, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :phone, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.telephone_field :phone, :class => 'text_field' %>
-    </div>
-  </div>
+<div class='row'>
+  <div class='col-md-4'>
+    <%= form_for @sponsor,
+      html: { class: 'form' } do |f|
+    %>
+      <div class='form-group'>
+        <%= f.label :fullname %>
+        <%= f.text_field :fullname,
+          class: 'form-control', required: true
+        %>
+      </div>
+      <div class='form-group'>
+        <%= f.label :description %>
+        <%= f.text_field :description, class: 'form-control' %>
+      </div>
+      <div class='form-group'>
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+      <div class='form-group'>
+        <%= f.label :phone %>
+        <%= f.telephone_field :phone, class: 'form-control' %>
+      </div>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                sponsors_path, :class => 'btn' %>
+      <div>
+        <%= f.submit nil, class: 'btn btn-default' %>
+        <%= link_to t('.cancel',
+          default: t('helpers.links.cancel')),
+          sponsors_path, class: 'btn'
+        %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
