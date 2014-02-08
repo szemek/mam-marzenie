@@ -11,7 +11,7 @@
   <dt><strong><%= model_class.human_attribute_name(:category) %>:</strong></dt>
   <dd><%= @dream.category %></dd>
   <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
-  <dd><%= @dream.status %></dd>
+  <dd><%= t(@dream.status) %></dd>
 </dl>
 
 <div class="form-actions">

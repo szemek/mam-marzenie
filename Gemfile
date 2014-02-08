@@ -75,3 +75,6 @@ end
 gem 'devise'
 gem 'devise-i18n-views'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
+
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
+gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
