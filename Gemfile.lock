@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/activerecord-hackery/polyamorous.git
+  revision: 3d45f4c9219b5e6626096d38aa04f401b7ce7808
+  specs:
+    polyamorous (0.6.4)
+      activerecord (>= 3.0)
+
+GIT
   remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
   revision: 9cded06677067b5fb0efe24cadbb5f9b5fe5f845
   specs:
@@ -151,8 +158,6 @@ GEM
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
-    polyamorous (0.6.4)
-      activerecord (>= 3.0)
     polyglot (0.3.3)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -279,6 +284,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   letter_opener
+  polyamorous!
   pry-rails
   rails (= 4.1.0.beta1)
   ransack
