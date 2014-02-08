@@ -1,5 +1,7 @@
 pl:
-  views:
-    volunteers:
-      show:
-        last_activity_at: Ostatnia aktywność
+  volunteers:
+    show:
+      last_activity_at: Ostatnia aktywność
+    search:
+      fullname: Imię i nazwisko
+      region: Oddział
