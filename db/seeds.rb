@@ -24,7 +24,8 @@ Dream.find_or_create_by({
   child_age:      7,
   region:         'Kraków',
   category:       'have',
-  status:         'completed'
+  status:         'completed',
+  step:           4
 }).update_attribute(:avatar, File.open(Rails.root.join('public/sample_data/kacper.jpeg')))
 
 Dream.find_or_create_by({
@@ -40,5 +41,6 @@ Dream.find_or_create_by({
   child_age:      11,
   region:         'Kraków',
   category:       'have',
-  status:         'completed'
+  status:         'completed',
+  step:           2
 }).update_attribute(:avatar, File.open(Rails.root.join('public/sample_data/lucja.jpeg')))
