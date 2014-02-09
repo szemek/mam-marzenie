@@ -82,7 +82,8 @@ class DreamsController < ApplicationController
         :avatar,
         :region,
         :category,
-        :status
+        :status,
+        :step
       )
     end
 end

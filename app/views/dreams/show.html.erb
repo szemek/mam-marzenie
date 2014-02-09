@@ -6,15 +6,31 @@
     </div>
     <div class='col-md-9'>
       <div class='row'>
-        <div class='col-md-10'>
+        <div class='col-md-8'>
           <h1><%= @dream.title %></h1>
           <h2><small><%= @dream.child_fullname %>, <%= @dream.child_age %> <%= @dream.region %></small></h2>
         </div>
-        <div class='col-md-1'>
-          <%= t(@dream.category) %>
-        </div>
-        <div class='col-md-1'>
-          <%= dream_status(@dream.status) %>
+        <div class='col-md-4'>
+          <div class='row'>
+            <div class='col-md-8'>
+              <%= @dream.category %>
+            </div>
+            <div class='col-md-4'>
+              <%= dream_status(@dream.step == 5 && @dream.status || :ongoing) %>
+            </div>
+          </div>
+          <div class='row'>
+            <% Dream.steps_collection.each_with_index do |step, index| %>
+              <div class='col-md-8'>
+                <%= step %>
+              </div>
+              <div class='col-md-4'>
+                <%= dream_status(@dream.status) if @dream.step == index %>
+                <%= dream_status(:failed) if @dream.step < index %>
+                <%= dream_status(:completed) if @dream.step > index %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
       <div class='row'>
@@ -37,9 +53,9 @@
                 <%= f.hidden_field :dream_id, value: @dream.id %>
                 <%= f.submit class: 'btn btn-success' %>
               <% end %>
-            </div>
+            <% end %>
           </div>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
