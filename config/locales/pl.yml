@@ -165,6 +165,8 @@ pl:
     links:
       destroy: Usuń
       confirm: Czy chcesz usunąć?
+      back: Powrót
+      edit: Edytuj
   number:
     currency:
       format:
