@@ -45,6 +45,7 @@
     </div>
   </div>
 </div>
+<%= render 'sponsors/inline_form' %>
 
 <div class='form-search'>
   <%= form_for(Task.new) do |f| %>
@@ -60,13 +61,3 @@
     <%= f.submit %>
   <% end %>
 </div>
-
-<div class='form-actions'>
-  <%= form_for(Sponsor.new) do |f|%>
-    <%= f.text_field :fullname, required: true %>
-    <%= f.email_field :email %>
-    <%= f.telephone_field :phone %>
-    <%= f.submit %>
-  <% end %>
-</div>
-
