@@ -47,26 +47,29 @@
 <%= render 'sponsors/inline_form' %>
 <br/>
 <%= render 'tasks/inline_form', task: @task, dream: @dream %>
-
-<table class='table table-striped'>
-  <thead>
-    <tr>
-      <th> Wolontariusz </th>
-      <th> Sponsor </th>
-      <th> Opis </th>
-      <th> Status </th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @dream.tasks.each do |task| %>
-      <tr>
-        <td><%= link_to task.user.fullname, volunteer_path(task.user_id) %></td>
-        <td><%= link_to task.sponsor.fullname, sponsor_path(task.sponsor_id) %></td>
-        <td><%= task.description %></td>
-        <td><%= task.result %></td>
-        <td><%= link_to 'Edytuj', edit_task_path(task.id) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<br/>
+<ul class='list-unstyled'>
+  <% @dream.tasks.each do |task| %>
+    <li>
+      <blockquote>
+        <div class='row'>
+          <div class='col-md-10'>
+            <p>
+              <%= link_to task.sponsor.fullname, sponsor_path(task.sponsor_id) %>:
+              <%= task.description %>
+            </p>
+            <footer><%= link_to task.user.fullname, volunteer_path(task.user_id) %></footer>
+          </div>
+          <div class='col-md-1'>
+            <%= link_to edit_task_path(task.id) do %>
+              <span class='glyphicon glyphicon-edit'></span>
+            <% end %>
+          </div>
+          <div class='col-md-1'>
+            <%= task_status(task.result) %>
+          </div>
+        <div>
+      </blockquote>
+    </li>
+  <% end %>
+</ul>

@@ -42,6 +42,15 @@ module ApplicationHelper
     raw "<span title='#{t(status)}' class='label label-#{type}'>&nbsp;</span>"
   end
 
+  def task_status(status)
+    type = if status.nil?
+      :refresh
+    else
+      status ? :ok : :remove
+    end
+    raw "<span title='#{t(status)}' class='glyphicon glyphicon-#{type}'></span>"
+  end
+
   private
 
   def element(name, options = {})
