@@ -13,23 +13,11 @@
         <div class='col-md-4'>
           <div class='row'>
             <div class='col-md-8'>
-              <%= @dream.category %>
+              <%= t(@dream.category) %>
             </div>
             <div class='col-md-4'>
-              <%= dream_status(@dream.step == 5 && @dream.status || :ongoing) %>
+              <%= dream_status(@dream.status) %>
             </div>
-          </div>
-          <div class='row'>
-            <% Dream.steps_collection.each_with_index do |step, index| %>
-              <div class='col-md-8'>
-                <%= step %>
-              </div>
-              <div class='col-md-4'>
-                <%= dream_status(@dream.status) if @dream.step == index %>
-                <%= dream_status(:failed) if @dream.step < index %>
-                <%= dream_status(:completed) if @dream.step > index %>
-              </div>
-            <% end %>
           </div>
         </div>
       </div>
@@ -66,9 +54,23 @@
   </div>
 </div>
 <br/>
-<%= render 'sponsors/inline_form' %>
-<br/>
-<%= render 'tasks/inline_form', task: @task, dream: @dream %>
+<div class='row'>
+  <div class='col-md-9'>
+    <%= render 'sponsors/inline_form' %>
+    <br/>
+    <%= render 'tasks/inline_form', task: @task, dream: @dream %>
+  </div>
+  <div class='col-md-3'>
+    <% Dream.steps_collection.each_with_index do |step, index| %>
+      <div class='col-md-10'>
+        <%= step %>
+      </div>
+      <div class='col-md-1'>
+        <%= progress_status(@dream.status, @dream.step, index) %>
+      </div>
+    <% end %>
+  </div>
+</div>
 <br/>
 <ul class='list-unstyled'>
   <% @dream.tasks.each do |task| %>

@@ -33,10 +33,19 @@ module ApplicationHelper
     Dream.statuses.map{|status| [t(status), status]}
   end
 
+  def progress_status(status, step, index)
+    type = if step == index && status == 'ongoing'
+        :fire
+    else
+      step < index ? :tasks : :ok
+    end
+    raw "<span class='glyphicon glyphicon-#{type}'></span>"
+  end
+
   def dream_status(status)
     type = case status.to_sym
     when :ongoing then :warning
-    when :complete then :success
+    when :completed then :success
     when :failed then :danger
     end
     raw "<span title='#{t(status)}' class='label label-#{type}'>&nbsp;</span>"

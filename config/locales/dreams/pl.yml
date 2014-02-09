@@ -21,7 +21,7 @@ pl:
       region: 'Oddział, w którym działasz'
 
   ongoing: W trakcie realizacji
-  complete: Spełnione
+  completed: Spełnione
   failed: Nie powiodło się
 
   be: być
