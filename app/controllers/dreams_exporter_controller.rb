@@ -3,7 +3,7 @@ class DreamsExporterController < ApplicationController
 
   def create
     pdf = PdfExporter.new(@dreams).perform!
-    
+
     render text: pdf, content_type: 'application/pdf'
   end
 
