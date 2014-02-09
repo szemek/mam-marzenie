@@ -167,6 +167,7 @@ pl:
       confirm: Czy chcesz usunąć?
       back: Powrót
       edit: Edytuj
+      new: Nowy
   number:
     currency:
       format:
