@@ -23,6 +23,17 @@ class Dream < ActiveRecord::Base
     end
   end
 
+  def self.steps_collection
+    [
+      'poznanie marzenia',
+      'akceptacja marzenia',
+      'plan działania',
+      'pozyskanie sponsora',
+      'realizacja marzenia',
+      'spełnienie marzenia'
+    ]
+  end
+
   def self.statuses
     %w[ongoing completed failed]
   end

@@ -14,6 +14,7 @@
       <%= f.input :region, input_html: { list: 'regions' } %>
       <%= render 'volunteers/regions' %>
       <%= f.input :category, collection: Dream.categories_collection %>
+      <%= f.input :step, collection: Dream.steps_collection.zip(0..5) %>
       <%= f.input :status, collection: dream_statuses %>
 
       <div>
