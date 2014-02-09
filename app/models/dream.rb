@@ -2,6 +2,7 @@
 class Dream < ActiveRecord::Base
   has_many :members
   has_many :users, through: :members
+  has_many :tasks
 
   scope :updated_after, ->(date) { where('updated_at >= ?', date) }
 
@@ -24,5 +25,4 @@ class Dream < ActiveRecord::Base
   def self.statuses
     %w[ongoing completed failed]
   end
-
 end
