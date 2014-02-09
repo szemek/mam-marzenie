@@ -4,6 +4,16 @@ pl:
       user: Wolontariusz
     attributes:
       user:
+        fullname: Imię i nazwisko
+        region: Oddział
         email: Email
         password: Hasło
         password_confirmation: Potwierdzenie hasła
+  devise:
+    registrations:
+      new:
+        placeholder_fullname: 'Przedstaw się, proszę'
+        placeholder_region: 'Oddział, w którym działasz'
+        placeholder_email: 'To będzie Twój login'
+        placeholder_password: 'Minimum 6 znaków'
+        placeholder_password_confirmation: 'Powtórz proszę swoje hasło'
