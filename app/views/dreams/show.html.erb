@@ -1,38 +1,50 @@
 <%- model_class = Dream -%>
 <div class='page-header'>
-  <h1>
-    <%= @dream.title %>
-    <small><%= @dream.child_fullname %> <%= @dream.child_age %></small></h1>
-</div>
+  <div class='row'>
+    <div class='col-md-3'>
+      <%= image_tag @dream.avatar.large.url, class: 'img-thumbnail' %>
+    </div>
+    <div class='col-md-9'>
+      <div class='row'>
+        <div class='col-md-10'>
+          <h1><%= @dream.title %></h1>
+          <h2><small><%= @dream.child_fullname %>, <%= @dream.child_age %> <%= @dream.region %></small></h2>
+        </div>
+        <div class='col-md-1'>
+          <%= @dream.category %>
+        </div>
+        <div class='col-md-1'>
+          <%= dream_status(@dream.status) %>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-md-8'>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:region) %>:</strong></dt>
-  <dd><%= @dream.region %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:category) %>:</strong></dt>
-  <dd><%= @dream.category %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
-  <dd><%= t(@dream.status) %></dd>
-</dl>
-
-<div class="form-actions">
-  <%= link_to t('.back', default: t("helpers.links.back")),
-              dreams_path, class: 'btn'  %>
-  <%= link_to t('.edit', default: t("helpers.links.edit")),
-              edit_dream_path(@dream), class: 'btn' %>
-  <%= link_to t('.destroy', default: t("helpers.links.destroy")),
-              dream_path(@dream),
-              method: 'delete',
-              data: { confirm: t('.confirm', default: t('helpers.links.confirm')) },
-              class: 'btn btn-danger' %>
-</div>
-<% unless @dream.users.include?(current_user) %>
-  <div class='form-actions'>
-    <%= form_for(Member.new) do |f|%>
-      <%= f.hidden_field :dream_id, value: @dream.id %>
-      <%= f.submit %>
-    <% end %>
+        </div>
+        <div class='col-md-1'>
+          <%= link_to t('.back', default: t("helpers.links.back")),
+            dreams_path, class: 'btn'
+          %>
+        </div>
+        <div class='col-md-1'>
+          <%= link_to t('.edit', default: t('helpers.links.edit')),
+            edit_dream_path(@dream), class: 'btn btn-default'
+          %>
+        </div>
+        <% unless @dream.users.include?(current_user) %>
+          <div class='col-md-2'>
+            <div class='form-actions'>
+              <%= form_for(Member.new) do |f|%>
+                <%= f.hidden_field :dream_id, value: @dream.id %>
+                <%= f.submit class: 'btn btn-success' %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-<% end %>
+</div>
 
 <div class='form-search'>
   <%= form_for(Task.new) do |f| %>

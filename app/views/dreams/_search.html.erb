@@ -6,7 +6,7 @@
   <div class='form-group'>
     <%= f.label :title_cont, class: 'sr-only' %>
     <%= f.text_field :title_cont,
-      class: 'form-control',
+      class: 'form-control input-sm',
       placeholder: t('.title')
     %>
   </div>
@@ -14,7 +14,7 @@
   <div class='form-group'>
     <%= f.label :region_cont, class: 'sr-only' %>
     <%= f.text_field :region_cont,
-      class: 'form-control',
+      class: 'form-control input-sm',
       placeholder: t('.region')
     %>
   </div>
@@ -24,14 +24,14 @@
     <%= f.select :category_cont, options_for_select(
       [['Kategoria', '']] + Dream.categories_collection,
       selected: ''), {},
-      class: 'form-control'
+      class: 'form-control input-sm'
     %>
     <%= f.text_field :region_cont,
-      class: 'form-control',
+      class: 'form-control input-sm',
       placeholder: :region
     %>
     <%= f.date_field :updated_at,
-      class: 'form-control'
+      class: 'form-control input-sm'
     %>
   </div>
 
@@ -39,8 +39,8 @@
     <%= f.select :status_cont, options_for_select(
         [['Stan', '']] + dream_statuses,
         selected: ''), {},
-        class: 'form-control'
+        class: 'form-control input-sm'
         %>
   </div>
-   <%= f.submit t('search'), class: 'btn btn-default' %>
+   <%= f.submit t('search'), class: 'btn btn-default btn-sm' %>
 <% end %>
