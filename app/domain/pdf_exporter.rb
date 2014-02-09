@@ -1,4 +1,4 @@
-class PdfExporter < Struct.new(:dreams)
+class PdfExporter < Struct.new(:dreams, :note)
   DEFAULT_FONT = Rails.root.join('app/assets/fonts/DejaVuSans.ttf')
 
   def perform!
@@ -7,11 +7,16 @@ class PdfExporter < Struct.new(:dreams)
     dreams.each do |dream|
       attach_avatar(dream)
       set_child_information(dream)
-
-      next_page unless dream == dreams.last
+      next_page
     end
 
+    add_note
+
     render_to_stream
+  end
+
+  def add_note
+    pdf.draw_text note, :at => [100, height - 100]
   end
 
   def set_font
