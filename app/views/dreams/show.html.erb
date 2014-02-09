@@ -55,15 +55,17 @@
       <th> Sponsor </th>
       <th> Opis </th>
       <th> Status </th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <% @dream.tasks.each do |task| %>
       <tr>
-        <td><%= task.user.fullname %></td>
-        <td><%= task.sponsor.fullname %></td>
+        <td><%= link_to task.user.fullname, volunteer_path(task.user_id) %></td>
+        <td><%= link_to task.sponsor.fullname, sponsor_path(task.sponsor_id) %></td>
         <td><%= task.description %></td>
         <td><%= task.result %></td>
+        <td><%= link_to 'Edytuj', edit_task_path(task.id) %></td>
       </tr>
     <% end %>
   </tbody>
