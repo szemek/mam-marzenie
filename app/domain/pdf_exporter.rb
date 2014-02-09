@@ -3,10 +3,14 @@ class PdfExporter < Struct.new(:dreams)
 
   def perform!
     set_font
+
     dreams.each do |dream|
       attach_avatar(dream)
       set_child_information(dream)
+
+      next_page unless dream == dreams.last
     end
+
     render_to_stream
   end
 
@@ -25,6 +29,10 @@ class PdfExporter < Struct.new(:dreams)
     pdf.text_box "#{dream.description}",
       :at => [200, height - 100],
       :width => 500
+  end
+
+  def next_page
+    pdf.start_new_page
   end
 
   def render_to_stream
