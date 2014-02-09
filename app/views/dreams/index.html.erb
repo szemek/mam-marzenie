@@ -14,27 +14,26 @@
   </div>
 </div>
 <br/>
-<table class='table table-striped'>
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:child_fullname) %></th>
-      <th><%= model_class.human_attribute_name(:child_age) %></th>
-      <th><%= model_class.human_attribute_name(:category) %></th>
-      <th><%= model_class.human_attribute_name(:region) %></th>
-      <th><%= model_class.human_attribute_name(:status) %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @dreams.each do |dream| %>
-      <tr>
-        <td><%= link_to dream.title, dream %></td>
-        <td><%= dream.child_fullname %></td>
-        <td><%= dream.child_age %></td>
-        <td><%= dream.category %></td>
-        <td><%= dream.region %></td>
-        <td><%= dream.status %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<ul class='list-unstyled'>
+  <% @dreams.each do |dream| %>
+    <li>
+      <blockquote>
+        <div class='row'>
+          <div class='col-md-10'>
+            <p>
+              <%= image_tag dream.avatar.thumb.url, class: 'img-thumbnail' %>&nbsp;
+              <%= link_to dream.title, dream %>
+            </p>
+            <footer><%= dream.child_fullname %>, <%= dream.child_age %> <%= dream.region %></footer>
+          </div>
+          <div class='col-md-1'>
+            <%= dream.category %>
+          </div>
+          <div class='col-md-1'>
+            <%= dream_status(dream.status) %>
+          </div>
+        <div>
+      </blockquote>
+    </li>
+  <% end %>
+</ul>
