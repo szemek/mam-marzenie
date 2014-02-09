@@ -1,0 +1,19 @@
+<li>
+  <blockquote>
+    <div class='row'>
+      <div class='col-md-10'>
+        <p>
+          <%= image_tag dream.avatar.thumb.url, class: 'img-thumbnail' %>&nbsp;
+          <%= link_to dream.title, dream %>
+        </p>
+        <footer><%= dream.child_fullname %>, <%= dream.child_age %> <%= dream.region %></footer>
+      </div>
+      <div class='col-md-1'>
+        <%= dream.category %>
+      </div>
+      <div class='col-md-1'>
+        <%= dream_status(dream.status) %>
+      </div>
+    <div>
+  </blockquote>
+</li>

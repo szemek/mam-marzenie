@@ -145,6 +145,7 @@ en:
     links:
       back: Back
       edit: Edit
+      new: New
   number:
     currency:
       format:
