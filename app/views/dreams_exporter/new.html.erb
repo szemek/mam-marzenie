@@ -1,0 +1,8 @@
+<h1> Add note </h1>
+<div>
+  <%= form_tag(generate_dreams_path) do %>
+    <%= hidden_field_tag :dream_ids, params[:dream_ids] %>
+    <%= text_area_tag :note %>
+    <%= submit_tag t('generate')%>
+  <% end %>
+</div>

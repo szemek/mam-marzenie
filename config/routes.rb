@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   resources :members, only: [:create]
   resources :dreams do
     collection do
-      post :export, to: 'dreams_exporter#create'
+      get :export, to: 'dreams_exporter#new'
+      post :generate, to: 'dreams_exporter#create'
     end
   end
   resources :sponsors
