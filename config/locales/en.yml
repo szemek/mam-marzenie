@@ -142,6 +142,9 @@ en:
       create: Create %{model}
       submit: Save %{model}
       update: Update %{model}
+    links:
+      back: Back
+      edit: Edit
   number:
     currency:
       format:

@@ -15,5 +15,15 @@ en:
         status: Status
   dreams:
     search:
-      title: Tytuł
-      region: Obszar
+      title: Title
+      region: Region
+
+  ongoing: In progress
+  completed: Completed
+  failed: Failed
+
+  be: be
+  have: have
+  meet: meet
+  travel: travel
+  other: other
