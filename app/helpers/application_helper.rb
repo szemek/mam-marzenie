@@ -51,6 +51,10 @@ module ApplicationHelper
     raw "<span title='#{t(status)}' class='glyphicon glyphicon-#{type}'></span>"
   end
 
+  def extract_ids(collection)
+    collection.map(&:id).join(',')
+  end
+
   private
 
   def element(name, options = {})
