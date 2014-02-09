@@ -64,6 +64,8 @@ pl:
     sessions:
       signed_in: 'Witaj ponownie!'
       signed_out: 'Wylogowałeś się. Zapraszamy ponownie!'
+      new:
+        remember_me: Zapamiętaj mnie
     unlocks:
       send_instructions: 'Za chwilę wyślemy instrukcję odblokowania konta na Twój adres e-mail.'
       send_paranoid_instructions: 'Jeśli Twoje konto istnieje w naszej bazie, otrzymasz zaraz e-mail z instrukcją jak odblokować swoje konto.'

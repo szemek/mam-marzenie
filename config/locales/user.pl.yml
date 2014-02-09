@@ -9,6 +9,7 @@ pl:
         email: Email
         password: Hasło
         password_confirmation: Potwierdzenie hasła
+        phone: Telefon
   devise:
     registrations:
       new:
