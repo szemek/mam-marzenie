@@ -1,35 +1,41 @@
 <%- model_class = Sponsor -%>
-<div class="page-header">
-  <h1><%= @sponsor.fullname %></h1>
+<div class='page-header'>
+  <div class='row'>
+    <div class='col-md-10'>
+      <h1><%= @sponsor.fullname %></h1>
+    </div>
+    <div class='col-md-2'>
+      <div class='row'>
+        <div class='col-md-6'>
+          <address>
+            <small><%= @sponsor.phone %><br/>
+            <%= mail_to @sponsor.email %></small>
+          </address>
+        </div>
+        <div class='col-md-6'>
+          <span class='badge'><%= @sponsor.dreams.count %></span>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-md-12'>
+          <%= link_to t('.back', default: t('helpers.links.back')),
+            sponsors_path,
+            class: 'btn'
+          %>
+          <%= link_to t('.edit', default: t('helpers.links.edit')),
+            edit_sponsor_path(@sponsor), class: 'btn btn-default'
+          %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @sponsor.description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
-  <dd><%= @sponsor.email %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
-  <dd><%= @sponsor.phone %></dd>
-</dl>
+<div class='row'>
+  <div class='col-md-12'><%= @sponsor.description %></div>
+</div>
+<br/>
 
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              sponsors_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_sponsor_path(@sponsor), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              sponsor_path(@sponsor),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
-</div>
-<div>
-  <ul>
-    <% @sponsor.dreams.each do |dream| %>
-      <li>
-        <%= link_to dream.title, dream_path %>
-        <%= dream_status(dream.status) %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<ul class='list-unstyled'>
+  <%= render partial: 'dreams/dream', collection: @sponsor.dreams%>
+</ul>

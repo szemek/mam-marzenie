@@ -6,3 +6,5 @@ en:
       fullname: Fullname
       email: Email
       phone: Phone
+    search:
+      fullname: Pełna nazwa

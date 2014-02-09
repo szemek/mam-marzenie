@@ -17,3 +17,4 @@ en:
         placeholder_email: It is your login
         placeholder_password: At least 6 characters
         placeholder_password_confirmation: 'Repeat your password, please'
+        current_password: Current password
