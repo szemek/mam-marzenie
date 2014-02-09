@@ -36,7 +36,7 @@ module ApplicationHelper
   def dream_status(status)
     type = case status.to_sym
     when :ongoing then :warning
-    when :completed then :success
+    when :complete then :success
     when :failed then :danger
     end
     raw "<span title='#{t(status)}' class='label label-#{type}'>&nbsp;</span>"
