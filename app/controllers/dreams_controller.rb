@@ -5,9 +5,9 @@ class DreamsController < ApplicationController
   # GET /dreams
   # GET /dreams.json
   def index
-    querry = params[:q]
-    querry && date = querry[:updated_at]
-    @search = Dream.search(querry && querry.except(:updated_at))
+    query = params[:q]
+    query && date = query[:updated_at]
+    @search = Dream.search(query && query.except(:updated_at))
     @dreams = date && @search.result.updated_after(date) || @search.result
   end
 
