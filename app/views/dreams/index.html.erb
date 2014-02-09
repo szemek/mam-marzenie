@@ -5,10 +5,8 @@
       <h1><%= model_class.model_name.human(count: 2) %></h1>
     </div>
     <div class='col-lg-1'>
-      <%= form_tag(export_dreams_path) do %>
-        <%= hidden_field_tag :dreams_ids, extract_ids(@dreams) %>
-        <%= submit_tag t('export'), class: 'btn btn-success'%>
-      <% end %>
+      <%= link_to t('export'), export_dreams_path(dream_ids: extract_ids(@dreams))
+      %>
     </div>
     <div class='col-lg-1'>
       <%= link_to t('.new', default: t('helpers.links.new')),
