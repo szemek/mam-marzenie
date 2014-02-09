@@ -1,20 +1,24 @@
-class PdfExporter < Struct.new(:dream)
+class PdfExporter < Struct.new(:dreams)
+  DEFAULT_FONT = Rails.root.join('app/assets/fonts/DejaVuSans.ttf')
+
   def perform!
     set_font
-    attach_avatar
-    set_child_information
-    generate
+    dreams.each do |dream|
+      attach_avatar(dream)
+      set_child_information(dream)
+    end
+    render_to_stream
   end
 
   def set_font
-    pdf.font Rails.root.join('app/assets/fonts/DejaVuSans.ttf')
+    pdf.font DEFAULT_FONT
   end
 
-  def attach_avatar
+  def attach_avatar(dream)
     pdf.image dream.avatar.file.path if dream.avatar
   end
 
-  def set_child_information
+  def set_child_information(dream)
     pdf.font_size(20) do
       pdf.draw_text "#{dream.child_fullname}, #{dream.child_age}", :at => [200, height - 85]
     end
@@ -23,8 +27,8 @@ class PdfExporter < Struct.new(:dream)
       :width => 500
   end
 
-  def generate
-    pdf.render_file filename
+  def render_to_stream
+    pdf.render
   end
 
   private
