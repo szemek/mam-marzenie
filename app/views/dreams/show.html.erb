@@ -45,21 +45,8 @@
   </div>
 </div>
 <%= render 'sponsors/inline_form' %>
-
-<div class='form-search'>
-    <%= simple_form_for @task,
-      defaults:{
-        wrapper_html: { class: 'form-group'},
-        input_html: { class: 'form-control' }
-      } do |f|
-    %>
-      <%= f.input :sponsor %>
-      <%= f.select :result, [[:pending, nil],[:success, true],[:failed, false]] %>
-      <%= f.input :description, as: :text%>
-      <%= f.hidden_field :dream_id, value: @dream.id %>
-      <%= f.submit nil, class: 'btn btn-default' %>
-    <% end %>
-</div>
+<br/>
+<%= render 'tasks/inline_form', task: @task, dream: @dream %>
 
 <table class='table table-striped'>
   <thead>
