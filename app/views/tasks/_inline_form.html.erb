@@ -3,6 +3,13 @@
     html: { class: 'form-inline' } do |f|
   %>
     <div class='form-group'>
+      <%= f.text_field :description,
+        as: :text,
+        class: 'form-control',
+        placeholder: t('.description')
+      %>
+    </div>
+    <div class='form-group'>
       <%= f.select :sponsor_id,
         options_from_collection_for_select(Sponsor.all, :id, :fullname
         ), {},
@@ -14,13 +21,6 @@
       <%= f.select :result,
         [[:pending, nil],[:success, true], [:failed, false]], {},
         class: 'form-control'
-      %>
-    </div>
-    <div class='form-group'>
-      <%= f.text_field :description,
-        as: :text,
-        class: 'form-control',
-        placeholder: t('.description')
       %>
     </div>
     <%= f.hidden_field :dream_id, value: dream.id %>
