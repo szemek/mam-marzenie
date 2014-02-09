@@ -20,7 +20,7 @@ class PdfExporter < Struct.new(:dreams)
 
   def attach_avatar(dream)
     begin
-      pdf.image dream.avatar.file.path
+      pdf.image dream.avatar.middle.path
     rescue Exception => e
       Rails.logger.warn(e.message.red)
     end
