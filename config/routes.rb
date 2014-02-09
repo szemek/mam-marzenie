@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :members, only: [:create]
-  resources :dreams
+  resources :dreams do
+    collection do
+      post :export, to: 'dreams_exporter#create'
+    end
+  end
   resources :sponsors
   resources :tasks
   resources :volunteers
