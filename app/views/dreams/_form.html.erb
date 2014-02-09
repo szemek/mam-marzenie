@@ -11,7 +11,8 @@
       <%= f.input :child_fullname %>
       <%= f.input :child_age, collection: Dream.age_range %>
       <%= f.input :avatar, as: :file %>
-      <%= f.input :region %>
+      <%= f.input :region, list: 'regions' %>
+      <%= render 'volunteers/regions' %>
       <%= f.input :category, collection: Dream.categories_collection %>
       <%= f.input :status, collection: dream_statuses %>
 
