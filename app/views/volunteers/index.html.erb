@@ -6,20 +6,29 @@
     <%= render partial: 'search', locals: { search: @search } %>
   </div>
 </div>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:fullname) %></th>
-      <th><%= model_class.human_attribute_name(:region) %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to user.fullname, volunteer_path(user) %></td>
-        <td><%= user.region %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<br/>
+<ul class='list-unstyled'>
+  <% @users.each do |user| %>
+    <li>
+      <blockquote>
+        <div class='row'>
+          <div class='col-md-9'>
+            <p>
+              <address>
+                <strong><%= link_to user.fullname, volunteer_path(user) %></strong><br/>
+                <small><%= user.region %><br/>
+                <%= mail_to user.email %></small>
+              </address>
+            </p>
+          </div>
+          <div class='col-md-2'>
+            <small><%= l user.last_sign_in_at, format: :very_short %></small>
+          </div>
+          <div class='col-md-1'>
+            <span class='badge'><%= user.dreams.count %></span>
+          </div>
+        <div>
+      </blockquote>
+    </li>
+  <% end %>
+</ul>
