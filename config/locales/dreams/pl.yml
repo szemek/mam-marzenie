@@ -16,6 +16,8 @@ pl:
   dreams:
     dream:
       years: lat
+    show:
+      years: lat
     search:
       title: 'Marzenie, którego szukasz'
       region: 'Oddział, w którym działasz'
