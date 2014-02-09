@@ -1,5 +1,7 @@
 pl:
   sponsors:
+    index:
+      title: Sponsorzy
     inline_form:
       fullname: Pełna nazwa
       email: Email
