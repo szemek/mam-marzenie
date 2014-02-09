@@ -1,54 +1,19 @@
 <div class='row'>
   <div class='col-md-4'>
-    <%= form_for dream,
-      html: { class: 'form' } do |f|
+    <%= simple_form_for dream,
+      defaults: {
+        wrapper_html: { class: 'form-group'},
+        input_html: { class: 'form-control' }
+      } do |f|
     %>
-      <div class='form-group'>
-        <%= f.label :title %>
-        <%= f.text_field :title,
-          class: 'form-control',
-          required: true
-        %>
-      </div>
-      <div class='form-group'>
-        <%= f.label :description %>
-        <%= f.text_area :description, class: 'form-control' %>
-      </div>
-      <div class='form-group'>
-        <%= f.label :child_fullname %>
-        <%= f.text_field :child_fullname,
-          class: 'form-control',
-          required: true
-        %>
-      </div>
-      <div class='form-group'>
-        <%= f.label :child_age %>
-        <%= f.number_field :child_age,
-          class: 'form-control',
-          in: dream.age_range
-        %>
-      </div>
-      <div class='form-group'>
-        <%= f.label :avatar %>
-        <%= f.file_field :avatar, class: 'form-control' %>
-      </div>
-      <div class='form-group'>
-        <%= f.label :region %>
-        <%= f.text_field :region,
-          class: 'form-control',
-          required: true
-        %>
-      </div>
-      <div class='form-group'>
-        <%= f.label :category%>
-        <%= f.text_field :category, class: 'form-control' %>
-      </div>
-      <div class='form-group'>
-        <%= f.label :status %>
-        <%= f.select :status, dream_statuses, {},
-          class: 'form-control'
-        %>
-      </div>
+      <%= f.input :title %>
+      <%= f.input :description, as: :text %>
+      <%= f.input :child_fullname %>
+      <%= f.input :child_age, collection: Dream.age_range %>
+      <%= f.input :avatar, as: :file %>
+      <%= f.input :region %>
+      <%= f.input :category, collection: Dream.categories_collection %>
+      <%= f.input :status, collection: dream_statuses %>
 
       <div>
         <%= f.submit nil, class: 'btn btn-default' %>

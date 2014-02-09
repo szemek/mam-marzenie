@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  before_filter :require_login
+  skip_before_filter :require_login, if: :devise_controller?
+
   protected
 
   def configure_permitted_parameters
@@ -15,5 +18,11 @@ class ApplicationController < ActionController::Base
 
     devise_parameter_sanitizer.for(:account_update) << :fullname
     devise_parameter_sanitizer.for(:account_update) << :region
+  end
+
+  def require_login
+    unless current_user
+      redirect_to user_session_path
+    end
   end
 end

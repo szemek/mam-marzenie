@@ -21,14 +21,16 @@
 
   <div class='form-group'>
     <%= f.label :category_cont, class: 'sr-only' %>
-    <%= f.select :category_cont, options_for_select([
-        ['Kategoria', ''],
-        [t(:be), :be],
-        [t(:have), :have],
-        [t(:travel), :travel],
-        [t(:meet), :meet],
-        [t(:other), :other]
-      ], selected: ''), {},
+    <%= f.select :category_cont, options_for_select(
+      [['Kategoria', '']] + Dream.categories_collection,
+      selected: ''), {},
+      class: 'form-control'
+    %>
+    <%= f.text_field :region_cont,
+      class: 'form-control',
+      placeholder: :region
+    %>
+    <%= f.date_field :updated_at,
       class: 'form-control'
     %>
   </div>
