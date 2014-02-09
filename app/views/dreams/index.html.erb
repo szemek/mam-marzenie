@@ -38,3 +38,7 @@
     <% end %>
   </tbody>
 </table>
+
+<%= form_tag(export_dreams_path) do %>
+  <%= submit_tag t('export'), class: 'btn btn-success'%>
+<% end %>
