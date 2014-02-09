@@ -7,3 +7,4 @@ pl:
         email: Email
         password: Hasło
         password_confirmation: Potwierdzenie hasła
+        current_password: Aktualne hasło
