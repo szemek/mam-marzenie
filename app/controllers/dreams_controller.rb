@@ -5,8 +5,10 @@ class DreamsController < ApplicationController
   # GET /dreams
   # GET /dreams.json
   def index
-    @search = Dream.search(params[:q])
-    @dreams = @search.result
+    querry = params[:q]
+    querry && date = querry[:updated_at]
+    @search = Dream.search(querry && querry.except(:updated_at))
+    @dreams = date && @search.result.updated_after(date) || @search.result
   end
 
   # GET /dreams/1
@@ -21,11 +23,6 @@ class DreamsController < ApplicationController
 
   # GET /dreams/1/edit
   def edit
-  end
-
-  def search
-    @dreams = Dream.where('title LIKE ?', "%#{params[:title]}%")
-    render :index
   end
 
   # POST /dreams

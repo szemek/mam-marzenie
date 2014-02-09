@@ -17,3 +17,13 @@ pl:
     search:
       title: Tytuł
       region: Obszar
+
+  ongoing: W trakcie realizacji
+  completed: Spełnione
+  failed: Nie powiodło się
+
+  be: być
+  have: dostać
+  meet: spotkać
+  travel: zobaczyć
+  other: inne
