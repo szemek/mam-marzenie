@@ -3,10 +3,10 @@
   <h1><%= Dream.model_name.human(count: 2) %></h1>
 </div>
 <div class='row'>
-  <div class='col-lg-10'>
+  <div class='col-lg-11'>
       <%= render partial: 'search', locals: { search: @search } %>
   </div>
-  <div class='col-lg-2'>
+  <div class='col-lg-1'>
     <%= link_to t('.new', default: t('helpers.links.new')),
       new_dream_path,
       class: 'btn btn-primary'
