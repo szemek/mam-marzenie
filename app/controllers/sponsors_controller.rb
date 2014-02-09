@@ -29,7 +29,11 @@ class SponsorsController < ApplicationController
 
     respond_to do |format|
       if @sponsor.save
-        format.html { redirect_to @sponsor, notice: 'Sponsor was successfully created.' }
+        if URI(request.env['HTTP_REFERER']).path == '/sponsors/new'
+          format.html { redirect_to @sponsor, notice: 'Sponsor was successfully created.' }
+        else
+          format.html { redirect_to :back, notice: 'Sponsor was successfully created.' }
+        end
         format.json { render action: 'show', status: :created, location: @sponsor }
       else
         format.html { render action: 'new' }
