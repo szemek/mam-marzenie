@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20140209131924) do
     t.datetime "updated_at"
     t.string   "fullname"
     t.string   "region"
+    t.string   "phone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
