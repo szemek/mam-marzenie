@@ -1,19 +1,30 @@
 <%- model_class = Dream -%>
-<div class="page-header">
-  <h1><%= Dream.model_name.human(count: 2) %></h1>
-</div>
-<div class='row'>
-  <div class='col-lg-11'>
-      <%= render partial: 'search', locals: { search: @search } %>
+<div class='page-header'>
+  <div class='row'>
+    <div class='col-lg-10'>
+      <h1><%= Dream.model_name.human(count: 2) %></h1>
+    </div>
+    <div class='col-lg-1'>
+      <%= form_tag(export_dreams_path) do %>
+        <%= submit_tag t('export'), class: 'btn btn-success'%>
+      <% end %>
+    </div>
+    <div class='col-lg-1'>
+      <%= link_to t('.new', default: t('helpers.links.new')),
+        new_dream_path,
+        class: 'btn btn-primary'
+      %>
+    </div>
   </div>
-  <div class='col-lg-1'>
-    <%= link_to t('.new', default: t('helpers.links.new')),
-      new_dream_path,
-      class: 'btn btn-primary'
-    %>
+</div>
+
+<div class='row'>
+  <div class='col-lg-12'>
+      <%= render partial: 'search', locals: { search: @search } %>
   </div>
 </div>
 <br/>
+
 <ul class='list-unstyled'>
   <% @dreams.each do |dream| %>
     <li>
