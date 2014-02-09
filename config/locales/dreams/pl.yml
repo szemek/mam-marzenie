@@ -10,13 +10,15 @@ pl:
         description: Opis
         child_fullname: Marzyciel
         child_age: Wiek dziecka
-        region: Obszar
+        region: Oddział
         category: Kategoria
         status: Status
   dreams:
+    dream:
+      years: lat
     search:
-      title: Tytuł
-      region: Obszar
+      title: 'Marzenie, którego szukasz'
+      region: 'Oddział, w którym działasz'
 
   ongoing: W trakcie realizacji
   completed: Spełnione
