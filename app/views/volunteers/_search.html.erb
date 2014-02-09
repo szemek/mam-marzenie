@@ -15,8 +15,10 @@
     <%= f.label :region_cont, class: 'sr-only' %>
     <%= f.text_field :region_cont,
       class: 'form-control',
-      placeholder: t('.region')
+      placeholder: t('.region'),
+      list: 'regions'
     %>
+    <%= render 'volunteers/regions' %>
   </div>
   <%= f.submit t('search'), class: 'btn btn-default' %>
 <% end %>

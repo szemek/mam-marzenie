@@ -4,6 +4,17 @@ en:
       user: Volunteer
     attributes:
       user:
+        fullname: Fullname
+        region: Region
         email: Email
         password: Password
         password_confirmation: Password confirmation
+  devise:
+    registrations:
+      new:
+        placeholder_fullname: Introduce yourself
+        placeholder_region: Your region
+        placeholder_email: It is your login
+        placeholder_password: At least 6 characters
+        placeholder_password_confirmation: 'Repeat your password, please'
+        current_password: Current password
