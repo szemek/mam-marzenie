@@ -19,7 +19,6 @@
       </div>
       <div class='row'>
         <div class='col-md-8'>
-
         </div>
         <div class='col-md-1'>
           <%= link_to t('.back', default: t("helpers.links.back")),
@@ -48,16 +47,37 @@
 <%= render 'sponsors/inline_form' %>
 
 <div class='form-search'>
-  <%= form_for(Task.new) do |f| %>
-    <%= f.collection_select(
-        :sponsor_id,
-        Sponsor.all,
-        :id,
-        :fullname
-      )
+    <%= simple_form_for @task,
+      defaults:{
+        wrapper_html: { class: 'form-group'},
+        input_html: { class: 'form-control' }
+      } do |f|
     %>
-    <%= select_tag(:option, options_for_select([['complete',true],['falied',false]])) %>
-    <%= f.text_area :description%>
-    <%= f.submit %>
-  <% end %>
+      <%= f.input :sponsor %>
+      <%= f.select :result, [[:pending, nil],[:success, true],[:failed, false]] %>
+      <%= f.input :description, as: :text%>
+      <%= f.hidden_field :dream_id, value: @dream.id %>
+      <%= f.submit nil, class: 'btn btn-default' %>
+    <% end %>
 </div>
+
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th> Wolontariusz </th>
+      <th> Sponsor </th>
+      <th> Opis </th>
+      <th> Status </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dream.tasks.each do |task| %>
+      <tr>
+        <td><%= task.user.fullname %></td>
+        <td><%= task.sponsor.fullname %></td>
+        <td><%= task.description %></td>
+        <td><%= task.result %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
