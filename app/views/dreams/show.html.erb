@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class='row'>
-        <div class='col-md-8'>
+        <div class='col-md-10'>
         </div>
         <div class='col-md-1'>
           <%= link_to t('.back', default: t("helpers.links.back")),
@@ -44,6 +44,12 @@
     </div>
   </div>
 </div>
+<div class='row'>
+  <div class='col-md-12'>
+    <%= @dream.description %>
+  </div>
+</div>
+<br/>
 <%= render 'sponsors/inline_form' %>
 <br/>
 <%= render 'tasks/inline_form', task: @task, dream: @dream %>
