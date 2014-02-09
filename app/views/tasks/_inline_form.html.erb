@@ -12,7 +12,7 @@
     <div class='form-group'>
       <%= f.select :sponsor_id,
         options_from_collection_for_select(Sponsor.all, :id, :fullname
-        ), {},
+        ), { include_blank: 'Sponsor' },
         class: 'form-control',
         required: true
       %>
