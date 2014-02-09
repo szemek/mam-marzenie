@@ -1,14 +1,26 @@
 <div class='row'>
   <div class='col-md-4'>
     <%= form_for task,
-      defaults:{
-        wrapper_html: { class: 'form-group'},
-        input_html: { class: 'form-control' }
-      } do |f|
+      html: { class: 'form' } do |f|
     %>
-      <%= f.text_field :sponsor, value: @task.sponsor.fullname %>
-      <%= f.select :result, [[:pending, nil],[:success, true],[:failed, false]] %>
-      <%= f.text_area :description%>
+      <div class='form-group'>
+        <%= f.label :sponsor %>
+        <%= f.select :sponsor,
+          options_from_collection_for_select(Sponsor.all, :id, :fullname), {},
+          class: 'form-control' %>
+      </div>
+      <div class='form-group'>
+        <%= f.label :description %>
+        <%= f.text_area :description, class: 'form-control' %>
+      </div>
+      <div class='form-group'>
+        <%= f.select :result,
+          [
+            [:pending, nil],[:success, true],[:failed, false]
+          ], {},
+          class: 'form-control'
+        %>
+      </div>
       <%= f.submit nil, class: 'btn btn-default' %>
     <% end %>
   </div>
