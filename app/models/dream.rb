@@ -3,6 +3,7 @@ class Dream < ActiveRecord::Base
   has_many :members
   has_many :users, through: :members
   has_many :tasks
+  belongs_to :sponsors
 
   scope :updated_after, ->(date) { where('updated_at >= ?', date) }
 
