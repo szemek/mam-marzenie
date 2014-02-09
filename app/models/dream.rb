@@ -7,7 +7,7 @@ class Dream < ActiveRecord::Base
 
   scope :updated_after, ->(date) { where('updated_at >= ?', date) }
 
-  validates_presence_of :title, :description, :child_fullname, :region
+  validates_presence_of :title, :description, :child_fullname, :region, :category
   validates :child_age, inclusion: { in: proc { age_range } }
   validates :status, inclusion: { in: proc { statuses } }
 
