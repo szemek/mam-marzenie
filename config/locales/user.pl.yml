@@ -10,6 +10,7 @@ pl:
         password: Hasło
         password_confirmation: Potwierdzenie hasła
         phone: Telefon
+        current_password: Aktualne hasło
   devise:
     registrations:
       new:
@@ -18,4 +19,3 @@ pl:
         placeholder_email: 'To będzie Twój login'
         placeholder_password: 'Minimum 6 znaków'
         placeholder_password_confirmation: 'Powtórz proszę swoje hasło'
-        current_password: Aktualne hasło
