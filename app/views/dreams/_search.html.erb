@@ -15,8 +15,10 @@
     <%= f.label :region_cont, class: 'sr-only' %>
     <%= f.text_field :region_cont,
       class: 'form-control input-sm',
-      placeholder: t('.region')
+      placeholder: t('.region'),
+      list: 'regions'
     %>
+    <%= render 'volunteers/regions' %>
   </div>
 
   <div class='form-group'>
@@ -25,10 +27,6 @@
       [['Kategoria', '']] + Dream.categories_collection,
       selected: ''), {},
       class: 'form-control input-sm'
-    %>
-    <%= f.text_field :region_cont,
-      class: 'form-control input-sm',
-      placeholder: :region
     %>
     <%= f.date_field :updated_at,
       class: 'form-control input-sm'
