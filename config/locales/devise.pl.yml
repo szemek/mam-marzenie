@@ -54,6 +54,8 @@ pl:
       updated: 'Zaktualizowałeś swoje dane.'
       update_needs_confirmation: 'Aby potwierdzić zmiany, musimy zweryfikować Twój nowy adres e-mail. Za chwilę wyślemy instrukcję na nowy adres.'
       destroyed: 'Usunąłeś swoje konto.'
+      edit:
+        back: Wstecz
 #      inactive_signed_up: 'Zarejestrowałeś się pomyślnie. Nie zostałeś jednak zalogowany ponieważ konto jest %{reason}.'
 #      reasons:
 #        inactive: 'nieaktywne'
