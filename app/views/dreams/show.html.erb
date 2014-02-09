@@ -25,36 +25,37 @@
               data: { confirm: t('.confirm', default: t('helpers.links.confirm')) },
               class: 'btn btn-danger' %>
 </div>
-<% unless @dream.users.include?(current_user) %>
-  <div class='form-actions'>
-    <%= form_for(Member.new) do |f|%>
-      <%= f.hidden_field :dream_id, value: @dream.id %>
-      <%= f.submit %>
-    <% end %>
-  </div>
-<% end %>
-
-<div class='form-search'>
-  <%= form_for(Task.new) do |f| %>
-    <%= f.collection_select(
-        :sponsor_id,
-        Sponsor.all,
-        :id,
-        :fullname
-      )
+<div>
+    <%= simple_form_for @task,
+      defaults:{
+        wrapper_html: { class: 'form-group'},
+        input_html: { class: 'form-control' }
+      } do |f|
     %>
-    <%= select_tag(:option, options_for_select([['complete',true],['falied',false]])) %>
-    <%= f.text_area :description%>
-    <%= f.submit %>
-  <% end %>
+      <%= f.input :sponsor %>
+      <%= f.select :result, [[:pending, nil],[:success, true],[:failed, false]] %>
+      <%= f.input :description, as: :text%>
+      <%= f.hidden_field :dream_id, value: @dream.id %>
+      <%= f.submit nil, class: 'btn btn-default' %>
+    <% end %>
 </div>
-
-<div class='form-actions'>
-  <%= form_for(Sponsor.new) do |f|%>
-    <%= f.text_field :fullname, required: true %>
-    <%= f.email_field :email %>
-    <%= f.telephone_field :phone %>
-    <%= f.submit %>
-  <% end %>
-</div>
-
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th> Wolontariusz </th>
+      <th> Sponsor </th>
+      <th> Opis </th>
+      <th> Status </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dream.tasks.each do |task| %>
+      <tr>
+        <td><%= task.user.fullname %></td>
+        <td><%= task.sponsor.fullname %></td>
+        <td><%= task.description %></td>
+        <td><%= task.result %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

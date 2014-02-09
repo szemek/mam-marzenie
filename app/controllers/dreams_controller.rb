@@ -14,6 +14,7 @@ class DreamsController < ApplicationController
   # GET /dreams/1
   # GET /dreams/1.json
   def show
+    @task = Task.new
   end
 
   # GET /dreams/new
