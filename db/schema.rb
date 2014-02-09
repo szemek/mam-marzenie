@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140209131827) do
+ActiveRecord::Schema.define(version: 20140209131924) do
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140209131827) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "avatar"
+    t.string   "website"
   end
 
   create_table "members", force: true do |t|
