@@ -34,6 +34,21 @@
   </div>
 <% end %>
 
+<div class='form-search'>
+  <%= form_for(Task.new) do |f| %>
+    <%= f.collection_select(
+        :sponsor_id,
+        Sponsor.all,
+        :id,
+        :fullname
+      )
+    %>
+    <%= select_tag(:option, options_for_select([['complete',true],['falied',false]])) %>
+    <%= f.text_area :description%>
+    <%= f.submit %>
+  <% end %>
+</div>
+
 <div class='form-actions'>
   <%= form_for(Sponsor.new) do |f|%>
     <%= f.text_field :fullname, required: true %>
