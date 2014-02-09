@@ -1,9 +1,15 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
-User.create(email: 'mam@marzenie.org', password: 'marzenie', password_confirmation: 'marzenie')
+User.create({
+  email: 'mam@marzenie.org',
+  fullname: 'Jan Kowalski',
+  region: 'Kraków',
+  password: 'marzenie',
+  password_confirmation: 'marzenie'
+})
 
-Dream.create({
+Dream.find_or_create_by({
   title:          'Playstation 4/3 + PS Move z grami',
   description:    'Nie ma dla Naszej fundacji piękniejszego i szczęśliwszego
     dnia niż ten, w którym możemy spełnić marzenie Naszych podopiecznych.
@@ -18,11 +24,10 @@ Dream.create({
   child_age:      7,
   region:         'Kraków',
   category:       'have',
-  status:         'completed',
-  avatar:         File.open(Rails.root.join('public/sample_data/kacper.jpeg'))
-})
+  status:         'completed'
+}).update_attribute(:avatar, File.open(Rails.root.join('public/sample_data/kacper.jpeg')))
 
-Dream.create({
+Dream.find_or_create_by({
   title:          'Laptop z dostępem do Internetu, z bezprzewodową myszką, pendrivem i czytnikiem linii papilarnych',
   description:    'Dzień, w którym spełnia się dziecięce marzenie powinien być
   absolutnie wyjątkowy. Tak właśnie było 18 sierpnia, gdy podczas koncertu
@@ -35,6 +40,5 @@ Dream.create({
   child_age:      11,
   region:         'Kraków',
   category:       'have',
-  status:         'completed',
-  avatar:         File.open(Rails.root.join('public/sample_data/lucja.jpeg'))
-})
+  status:         'completed'
+}).update_attribute(:avatar, File.open(Rails.root.join('public/sample_data/lucja.jpeg')))
