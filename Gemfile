@@ -62,7 +62,6 @@ group :development, :test do
 end
 
 group :test do
-  gem 'cucumber-rails', require: false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem 'capybara'
@@ -73,7 +72,6 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-migrate'
   gem 'guard-rspec', require: false
-  gem 'guard-cucumber'
   gem 'guard-livereload', require: false
   gem 'letter_opener'
   gem 'factory_girl_rails', require: false
