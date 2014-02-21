@@ -19,11 +19,7 @@
 
       <div>
         <%= f.submit nil, class: 'btn btn-default' %>
-        <%= link_to t('.cancel',
-          default: t('helpers.links.cancel')),
-          dreams_path,
-          class: 'btn'
-        %>
+        <%= link_to 'Anuluj', dreams_path, class: 'btn'%>
       </div>
     <% end %>
   </div>
