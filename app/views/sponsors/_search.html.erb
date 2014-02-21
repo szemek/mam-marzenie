@@ -7,10 +7,10 @@
     <%= f.label :fullname_cont, class: 'sr-only' %>
     <%= f.text_field :fullname_cont,
       class: 'form-control',
-      placeholder: t('.fullname'),
+      placeholder: 'Pełna nazwa',
       autofocus: true
     %>
   </div>
-  <%= f.submit t('search'), class: 'btn btn-default' %>
-  <%= f.button t('clear'), type: :reset, class: 'btn' %>
+  <%= f.submit 'Szukaj', class: 'btn btn-default' %>
+  <%= f.button 'Wyczyść', type: :reset, class: 'btn' %>
 <% end %>
