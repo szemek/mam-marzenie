@@ -43,7 +43,7 @@ group :development, :test do
 end
 
 gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
+gem 'bootstrap-sass', '>= 3.1.1.0'
 gem 'carrierwave'
 gem 'delayed_job'
 gem 'delayed_job_active_record'
