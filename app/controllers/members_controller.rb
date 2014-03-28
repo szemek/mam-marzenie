@@ -1,7 +1,14 @@
 # MembersController
 class MembersController < ApplicationController
   def create
-    Member.create(create_member_params)
+    Member.find_or_create_by(create_member_params)
+    redirect_to :back
+  end
+
+  def destroy
+    member = Member.find(params[:id])
+    member.destroy if member.user == current_user
+
     redirect_to :back
   end
 
