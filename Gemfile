@@ -10,6 +10,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
 
 gem 'sass-rails', '~> 4.0.1'
@@ -40,6 +41,7 @@ group :development, :test do
   gem 'letter_opener'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'spring'
 end
 
 gem 'activeadmin', github: 'gregbell/active_admin'
@@ -53,10 +55,8 @@ gem 'formtastic', github: 'justinfrench/formtastic'
 gem 'mini_magick'
 gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
 gem 'prawn'
-gem 'rails_12factor'
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 gem 'simple_form'
-gem 'spring', group: :development
 gem 'thin'
 gem 'cloudinary'
 gem 'dotenv-rails', '~> 0.10.0'
