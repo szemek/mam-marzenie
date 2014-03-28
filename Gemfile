@@ -58,3 +58,4 @@ gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 gem 'simple_form'
 gem 'spring', group: :development
 gem 'thin'
+gem 'cloudinary'
