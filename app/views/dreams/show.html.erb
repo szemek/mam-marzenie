@@ -21,17 +21,7 @@
           </div>
         </div>
       </div>
-      <div class='row'>
-        <div class='col-md-8'>
-        </div>
-        <div class='col-md-1'>
-          <%= link_to 'Powrót', dreams_path, class: 'btn' %>
-        </div>
-        <div class='col-md-1'>
-          <%= link_to 'Edytuj', edit_dream_path(@dream), class: 'btn btn-default'%>
-        </div>
-        <%= render partial: 'dreams/membership' %>
-      </div>
+      <%= render 'dreams/actions' %>
     </div>
   </div>
 </div>
