@@ -25,25 +25,12 @@
         <div class='col-md-8'>
         </div>
         <div class='col-md-1'>
-          <%= link_to t('.back', default: t("helpers.links.back")),
-            dreams_path, class: 'btn'
-          %>
+          <%= link_to 'Powrót', dreams_path, class: 'btn' %>
         </div>
         <div class='col-md-1'>
-          <%= link_to t('.edit', default: t('helpers.links.edit')),
-            edit_dream_path(@dream), class: 'btn btn-default'
-          %>
+          <%= link_to 'Edytuj', edit_dream_path(@dream), class: 'btn btn-default'%>
         </div>
-        <% unless @dream.users.include?(current_user) %>
-          <div class='col-md-2'>
-            <div class='form-actions'>
-              <%= form_for(Member.new) do |f|%>
-                <%= f.hidden_field :dream_id, value: @dream.id %>
-                <%= f.submit class: 'btn btn-success' %>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
+        <%= render partial: 'dreams/membership' %>
       </div>
     </div>
   </div>

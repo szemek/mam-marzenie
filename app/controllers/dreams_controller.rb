@@ -15,6 +15,7 @@ class DreamsController < ApplicationController
   # GET /dreams/1.json
   def show
     @task = Task.new
+    @member = @dream.members.find_by(user_id: current_user.id)
   end
 
   # GET /dreams/new
