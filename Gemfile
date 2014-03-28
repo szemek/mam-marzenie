@@ -59,3 +59,4 @@ gem 'simple_form'
 gem 'spring', group: :development
 gem 'thin'
 gem 'cloudinary'
+gem 'dotenv-rails', '~> 0.10.0'
