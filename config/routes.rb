@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :members, only: [:create]
+  resources :members, only: [:create, :destroy]
   resources :dreams do
     collection do
       get :export, to: 'dreams_exporter#new'
