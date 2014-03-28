@@ -16,6 +16,7 @@ class DreamsController < ApplicationController
   def show
     @task = Task.new
     @member = @dream.members.find_by(user_id: current_user.id)
+    @users = @dream.users
   end
 
   # GET /dreams/new
