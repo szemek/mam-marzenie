@@ -1,0 +1,19 @@
+<% if @dream.users.include?(current_user) %>
+  <div class='col-md-2'>
+    <div class='form-actions'>
+      <%= form_for @member, method: :delete do |f|%>
+        <%= f.hidden_field :dream_id, value: @dream.id %>
+        <%= f.submit 'Zrezygnuj', class: 'btn btn-danger' %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class='col-md-2'>
+    <div class='form-actions'>
+      <%= form_for(Member.new) do |f|%>
+        <%= f.hidden_field :dream_id, value: @dream.id %>
+        <%= f.submit 'Dołącz', class: 'btn btn-success' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
