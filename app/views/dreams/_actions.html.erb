@@ -1,0 +1,32 @@
+<div class='row'>
+  <div class='col-md-8'>
+  </div>
+
+  <div class='col-md-1'>
+    <%= link_to 'Powrót', dreams_path, class: 'btn' %>
+  </div>
+
+  <div class='col-md-1'>
+    <%= link_to 'Edytuj', edit_dream_path(@dream), class: 'btn btn-default'%>
+  </div>
+
+  <% if @member %>
+    <div class='col-md-2'>
+      <div class='form-actions'>
+        <%= form_for @member, method: :delete do |f|%>
+          <%= f.hidden_field :dream_id, value: @dream.id %>
+          <%= f.submit 'Zrezygnuj', class: 'btn btn-danger' %>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+    <div class='col-md-2'>
+      <div class='form-actions'>
+        <%= form_for(Member.new) do |f|%>
+          <%= f.hidden_field :dream_id, value: @dream.id %>
+          <%= f.submit 'Dołącz', class: 'btn btn-success' %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
