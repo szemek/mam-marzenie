@@ -19,10 +19,10 @@
               <%= dream_status(@dream.status) %>
             </div>
           </div>
-          <%= render 'dreams/team' %>
+          <%= render partial: 'dreams/show/team', locals: { users: @users } %>
         </div>
       </div>
-      <%= render 'dreams/actions' %>
+      <%= render partial: 'dreams/show/actions', locals: { dream: @dream, member: @member } %>
     </div>
   </div>
 </div>
