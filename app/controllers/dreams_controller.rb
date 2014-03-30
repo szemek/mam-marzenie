@@ -22,6 +22,7 @@ class DreamsController < ApplicationController
     @task = Task.new
     @member = @dream.members.find_by(user_id: current_user.id)
     @users = @dream.users
+    @comments = @dream.comments.order('created_at DESC').joins(:user)
   end
 
   # GET /dreams/new

@@ -1,0 +1,16 @@
+.form-actions
+  = simple_form_for Sponsor.new, html: { class: 'form-inline' } do |f|
+    .form-group
+      = f.text_field :fullname,     |
+        required: true,             |
+        class: 'form-control',      |
+        placeholder: t('.fullname') |
+    .form-group
+      = f.email_field :email,    |
+        class: 'form-control',   |
+        placeholder: t('.email') |
+    .form-group
+      = f.telephone_field :phone, |
+        class: 'form-control',    |
+        placeholder: t('.phone')  |
+    = f.submit 'Dodaj sponsora', class: 'btn btn-default'

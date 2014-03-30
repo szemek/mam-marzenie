@@ -10,6 +10,8 @@
 
     .tab-content
       #comments.tab-pane.active
+        = render 'comments/inline_form'
+        = render 'dreams/show/comments'
       #tasks.tab-pane
         = render 'tasks/inline_form', task: @task, dream: @dream
         = render 'dreams/show/tasks'

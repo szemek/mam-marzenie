@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       get :export, to: 'dreams_exporter#new'
       post :generate, to: 'dreams_exporter#create'
     end
+    resources :comments, only: [:create, :destroy]
   end
   resources :sponsors
   resources :tasks
