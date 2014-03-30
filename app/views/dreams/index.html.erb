@@ -1,18 +1,13 @@
-<%- model_class = Dream -%>
 <div class='page-header'>
   <div class='row'>
-    <div class='col-lg-10'>
-      <h1><%= model_class.model_name.human(count: 2) %></h1>
+    <div class='col-lg-9'>
+      <h1>Marzenia</h1>
     </div>
     <div class='col-lg-1'>
-      <%= link_to t('export'), export_dreams_path(dream_ids: extract_ids(@dreams))
-      %>
+      <%= link_to 'Eksportuj', export_dreams_path(dream_ids: extract_ids(@dreams)), class: 'btn' %>
     </div>
-    <div class='col-lg-1'>
-      <%= link_to t('.new', default: t('helpers.links.new')),
-        new_dream_path,
-        class: 'btn btn-primary'
-      %>
+    <div class='col-lg-2'>
+      <%= link_to 'Nowe marzenie', new_dream_path, class: 'btn btn-primary' %>
     </div>
   </div>
 </div>
