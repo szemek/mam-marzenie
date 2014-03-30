@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
   before_filter :require_login
   skip_before_filter :require_login, if: :devise_controller?
 
+  after_action :update_last_activity
+
   protected
 
   def configure_permitted_parameters
@@ -33,5 +35,9 @@ class ApplicationController < ActionController::Base
     unless current_user
       redirect_to user_session_path
     end
+  end
+
+  def update_last_activity
+    current_user.try(:update_attribute, :last_activity_at, DateTime.now)
   end
 end
