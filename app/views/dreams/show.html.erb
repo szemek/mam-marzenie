@@ -9,6 +9,7 @@
         <div class='col-md-8'>
           <h1><%= @dream.title %></h1>
           <h2><small><%= @dream.child_fullname %>, <%= t('.years') %> <%= @dream.child_age %>, <%= @dream.region %></small></h2>
+          <p><%= @dream.description %></p>
         </div>
         <div class='col-md-4'>
           <div class='row'>
@@ -26,52 +27,5 @@
     </div>
   </div>
 </div>
-<div class='row'>
-  <div class='col-md-12'>
-    <%= @dream.description %>
-  </div>
-</div>
-<br/>
-<div class='row'>
-  <div class='col-md-9'>
-    <%= render 'sponsors/inline_form' %>
-    <br/>
-    <%= render 'tasks/inline_form', task: @task, dream: @dream %>
-  </div>
-  <div class='col-md-3'>
-    <% Dream.steps_collection.each_with_index do |step, index| %>
-      <div class='col-md-10'>
-        <%= step %>
-      </div>
-      <div class='col-md-1'>
-        <%= progress_status(@dream.status, @dream.step, index) %>
-      </div>
-    <% end %>
-  </div>
-</div>
-<br/>
-<ul class='list-unstyled'>
-  <% @dream.tasks.each do |task| %>
-    <li>
-      <blockquote>
-        <div class='row'>
-          <div class='col-md-10'>
-            <p>
-              <%= link_to(task.sponsor.fullname, sponsor_path(task.sponsor_id)) if task.sponsor %>
-              <%= task.description %>
-            </p>
-            <footer><%= link_to task.user.fullname, volunteer_path(task.user_id) %></footer>
-          </div>
-          <div class='col-md-1'>
-            <%= link_to edit_task_path(task.id) do %>
-              <span class='glyphicon glyphicon-edit'></span>
-            <% end %>
-          </div>
-          <div class='col-md-1'>
-            <%= task_status(task.result) %>
-          </div>
-        <div>
-      </blockquote>
-    </li>
-  <% end %>
-</ul>
+
+<%= render 'dreams/show/tabs' %>
