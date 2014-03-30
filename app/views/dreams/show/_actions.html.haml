@@ -1,0 +1,19 @@
+.row
+  .col-md-8
+
+  .col-md-1
+    = link_to 'Powrót', dreams_path, class: 'btn'
+
+  .col-md-1
+    = link_to 'Edytuj', edit_dream_path(dream), class: 'btn btn-default'
+
+  .col-md-2
+    .form-actions
+      - if member
+        = form_for member, method: :delete do |f|
+          = f.hidden_field :dream_id, value: dream.id
+          = f.submit 'Zrezygnuj', class: 'btn btn-danger'
+      - else
+        = form_for(Member.new) do |f|
+          = f.hidden_field :dream_id, value: dream.id
+          = f.submit 'Dołącz', class: 'btn btn-success'
