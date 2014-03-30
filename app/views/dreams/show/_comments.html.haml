@@ -7,4 +7,7 @@
             %p
               = comment.body
             %footer= link_to comment.user.fullname, volunteer_path(comment.user_id)
-          .col-md-1
+          - if comment.user == current_user
+            .col-md-1
+              = form_for [@dream, comment], method: :delete do |f|
+                = f.submit 'Usuń', class: 'btn btn-danger'
