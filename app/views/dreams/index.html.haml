@@ -1,0 +1,17 @@
+.page-header
+  .row
+    .col-lg-9
+      %h1 Marzenia
+    .col-lg-1
+      = link_to 'Eksportuj', export_dreams_path(dream_ids: extract_ids(@dreams)), class: 'btn'
+    .col-lg-2
+      = link_to 'Nowe marzenie', new_dream_path, class: 'btn btn-primary'
+
+.row
+  .col-lg-12
+    = render partial: 'search', locals: { search: @search }
+
+%br
+
+%ul.list-unstyled
+  = render partial: 'dream', collection: @dreams
