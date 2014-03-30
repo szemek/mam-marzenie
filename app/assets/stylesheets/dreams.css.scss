@@ -14,3 +14,18 @@
     margin-bottom: 20px;
   }
 }
+
+#comments {
+  form {
+    margin-bottom: 20px;
+
+    .form-group {
+      width: 75%;
+
+      input[type=text] {
+        width: 100%;
+        height: 34px;
+      }
+    }
+  }
+}

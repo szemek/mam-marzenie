@@ -1,0 +1,10 @@
+%ul.list-unstyled
+  - @comments.each do |comment|
+    %li
+      %blockquote
+        .row
+          .col-md-10
+            %p
+              = comment.body
+            %footer= link_to comment.user.fullname, volunteer_path(comment.user_id)
+          .col-md-1

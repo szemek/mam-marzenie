@@ -1,0 +1,8 @@
+.form-actions
+  = simple_form_for [@dream, Comment.new], html: { class: 'form-inline' } do |f|
+    .form-group
+      = f.text_field :body,                    |
+        required: true,                        |
+        class: 'form-control col-md-8',        |
+        placeholder: 'Tu wpisz swój komentarz' |
+    = f.submit 'Dodaj komentarz', class: 'btn btn-default'
