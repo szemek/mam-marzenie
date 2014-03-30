@@ -1,0 +1,24 @@
+.row
+  .col-md-9
+    %ul.nav.nav-tabs
+      %li.active
+        %a{"data-toggle" => "tab", href: "#comments"} Komentarze
+      %li
+        %a{"data-toggle" => "tab", href: "#tasks"} Zadania
+      %li
+        %a{"data-toggle" => "tab", href: "#sponsors"} Sponsorzy
+
+    .tab-content
+      #comments.tab-pane.active
+      #tasks.tab-pane
+        = render 'tasks/inline_form', task: @task, dream: @dream
+        = render 'dreams/show/tasks'
+      #sponsors.tab-pane
+        = render 'sponsors/inline_form'
+  .col-md-3
+    - Dream.steps_collection.each_with_index do |step, index|
+      .col-md-10
+        = step
+      .col-md-1
+        = progress_status(@dream.status, @dream.step, index)
+
