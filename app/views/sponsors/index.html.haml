@@ -1,0 +1,30 @@
+.page-header
+  .row
+    .col-lg-10
+      %h1 Sponsorzy
+    .col-lg-2
+      = link_to 'Nowy sponsor', new_sponsor_path, class: 'btn btn-primary'
+
+.row
+  .col-lg-6
+    = render 'search', search: @search
+
+%br
+%ul.list-unstyled
+  - @sponsors.each do |sponsor|
+    %li
+      %blockquote
+        .row
+          .col-md-10
+            %p
+              %address
+                %strong= link_to sponsor.fullname, sponsor_path(sponsor)
+                %br
+                %small= sponsor.phone
+                %br
+                = mail_to sponsor.email
+          .col-md-1
+            = link_to edit_sponsor_path(sponsor) do
+              %span.glyphicon.glyphicon-edit
+          .col-md-1
+            %span.badge= sponsor.dreams.count
