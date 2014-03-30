@@ -1,0 +1,21 @@
+.page-header
+  .row
+    .col-md-3
+      = image_tag @dream.avatar.large.url, class: 'img-thumbnail'
+    .col-md-9
+      .row
+        .col-md-8
+          %h1= @dream.title
+          %h2
+            %small
+              #{@dream.child_fullname}, lat #{@dream.child_age}, #{@dream.region}
+          %p= @dream.description
+        .col-md-4
+          .row
+            .col-md-8
+              = t(@dream.category)
+            .col-md-4
+              = dream_status(@dream.status)
+          = render partial: 'dreams/show/team', locals: { users: @users }
+      = render partial: 'dreams/show/actions', locals: { dream: @dream, member: @member }
+= render 'dreams/show/tabs'
