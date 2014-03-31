@@ -6,6 +6,7 @@
           .col-md-10
             %p
               = comment.body
+            %span.comment.timestamp #{l comment.created_at, format: :activity}
             %footer= link_to comment.user.fullname, volunteer_path(comment.user_id)
           - if comment.user == current_user
             .col-md-1

@@ -16,6 +16,12 @@
 }
 
 #comments {
+  span {
+    &.timestamp {
+      font-size: 60%;
+      color: #aaa;
+    }
+  }
   form {
     margin-bottom: 20px;
 
