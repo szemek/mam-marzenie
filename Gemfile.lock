@@ -366,6 +366,7 @@ DEPENDENCIES
   rails (= 4.1.0)
   rails_12factor
   ransack!
+  rest-client
   rspec-rails (~> 3.0.0.beta)
   sass-rails (~> 4.0.1)
   simple_form
